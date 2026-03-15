@@ -5,32 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Philosophia — AI Dialogues with History's Greatest Thinkers</title>
 <link rel="canonical" href="https://egogogogogogo.github.io/philosophy/">
-<meta name="description" content="Engage in deep, AI-powered conversations with 18 historical philosophers including Socrates, Nietzsche, and Confucius. Available in multiple languages.">
-<meta name="keywords" content="philosophy, AI chatbot, Socrates, Nietzsche, Confucius, wisdom, ethics, existentialism, stoicism, dark mode">
-<meta property="og:title" content="Philosophia — AI Dialogues with History's Greatest Thinkers">
-<meta property="og:description" content="Engage in deep dialogues with 18 historical philosophers via AI.">
-<meta property="og:url" content="https://egogogogogogo.github.io/philosophy/">
-<meta property="og:type" content="website">
+<meta name="description" content="Engage in deep, AI-powered conversations with 18 historical philosophers. Available in multiple languages.">
+<meta name="keywords" content="philosophy, AI chatbot, Socrates, Nietzsche, Confucius, wisdom, dark mode">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+KR:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<!-- Google AdSense -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
 <body>
 
 <!-- ===================== UTILITY BAR ===================== -->
 <div class="utility-bar">
-  <select class="lang-select" id="langSelect" onchange="setLanguage(this.value)" aria-label="Select Language">
+  <select class="lang-select" id="langSelect" onchange="setLanguage(this.value)" aria-label="Language">
     <option value="ko">한국어</option>
     <option value="en">English</option>
     <option value="ja">日本語</option>
     <option value="zh">中文</option>
-    <option value="es">Español</option>
-    <option value="fr">Français</option>
-    <option value="de">Deutsch</option>
   </select>
-  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme">
     <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor"></svg>
   </button>
 </div>
@@ -39,11 +30,11 @@
 <div class="ad-overlay" id="adOverlay" role="dialog">
   <div class="ad-modal">
     <div class="ad-modal-top">
-      <span class="ad-modal-label" data-t="adLabel">A D V E R T I S E M E N T</span>
+      <span class="ad-modal-label" data-t="adLabel">Advertisement</span>
       <span class="ad-modal-countdown" id="adCountdown">5</span>
     </div>
     <div class="ad-modal-content">AD Area · 300 × 250</div>
-    <button class="ad-skip-btn" id="adSkipBtn" disabled onclick="skipAd()" data-t="skipAd">Continue →</button>
+    <button class="btn-premium" id="adSkipBtn" disabled onclick="skipAd()" data-t="skipAd" style="width: 100%">Continue</button>
   </div>
 </div>
 
@@ -64,54 +55,52 @@
   </header>
 
   <section class="gallery-section">
-    <p class="gallery-heading" data-t="galleryHeading" style="text-align:center; margin-bottom: 3rem; font-style: italic; color: var(--cream3);">Choose a philosopher to begin your journey</p>
+    <p class="gallery-heading" data-t="galleryHeading" style="text-align:center; margin-bottom: 4rem; font-style: italic; color: var(--cream3);">Choose a philosopher to begin your journey</p>
     <main class="gallery-grid" id="galleryGrid"></main>
   </section>
 
   <footer class="site-footer">
     <p data-t="footerText">© 2026 Philosophia · AI-Powered Dialogues with Great Thinkers</p>
-    <p>
-      <a onclick="showLegal('privacy')" data-t="privacy">Privacy Policy</a>
+    <div class="footer-links">
+      <a onclick="showLegal('privacy')" data-t="privacy">Privacy</a>
       <a onclick="showLegal('terms')" data-t="terms">Terms</a>
       <a onclick="showLegal('about')" data-t="about">About</a>
       <a onclick="showLegal('contact')" data-t="contact">Contact</a>
-    </p>
+    </div>
   </footer>
 </div>
 
 <!-- ===================== SCREEN: DETAIL ===================== -->
 <div class="screen" id="screen-detail">
-  <header class="site-header" style="padding: 2rem 0 1rem;">
-    <div class="site-title" style="font-size: 2rem;" data-t="siteTitle">Philosophia</div>
-  </header>
-  <div style="padding: 0 2rem;"><button class="back-btn" onclick="goGallery()" data-t="backToGallery">← Gallery</button></div>
+  <div style="padding: 2rem clamp(1.5rem, 6vw, 5rem);">
+    <button class="btn-premium" onclick="goGallery()" data-t="backToGallery">← List</button>
+  </div>
   <div id="detailHero"></div>
-  <div id="topicsWrap" style="padding: 0 2rem;"></div>
+  <div id="topicsWrap" style="padding: 0 clamp(1.5rem, 10vw, 8rem) 6rem;"></div>
 </div>
 
 <!-- ===================== SCREEN: CHAT ===================== -->
-<div class="screen" id="screen-chat">
+<div class="screen" id="screen-chat" style="height: 100vh; overflow: hidden;">
   <div class="chat-topbar">
-    <div class="chat-avatar" id="chatAvatar" style="font-size: 2rem;"></div>
+    <div id="chatAvatar" style="font-size: 2rem; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--bg2); border: 1px solid var(--gold); border-radius: 50%;"></div>
     <div style="flex: 1;">
-      <div class="chat-phil-name" id="chatName" style="font-size: 1.2rem; font-weight: bold; color: var(--gold);"></div>
-      <div class="chat-phil-era" id="chatEra" style="font-size: 0.8rem; color: var(--cream3);"></div>
+      <div class="chat-phil-name" id="chatName" style="font-family: 'Cinzel'; font-weight: 700; color: #fff;"></div>
+      <div class="chat-topic-pill" id="chatTopicPill" style="font-size: 0.8rem; color: var(--gold3); font-style: italic; margin-top: 0.2rem;"></div>
     </div>
-    <div class="chat-topic-pill" id="chatTopicPill" style="font-size: 0.9rem; font-style: italic;"></div>
-    <div style="display: flex; gap: 0.5rem;">
-      <button class="chat-action-btn" onclick="goDetail()" data-t="changeTopic">Topic</button>
-      <button class="chat-action-btn" onclick="switchPhil()" data-t="changePhil">Sage</button>
+    <div style="display: flex; gap: 0.8rem;">
+      <button class="btn-premium" onclick="goDetail()" data-t="changeTopic" style="padding: 0.5rem 1rem; font-size: 0.7rem;">Topic</button>
+      <button class="btn-premium" onclick="switchPhil()" data-t="changePhil" style="padding: 0.5rem 1rem; font-size: 0.7rem;">Sage</button>
     </div>
   </div>
 
   <div class="chat-messages" id="chatMessages"></div>
 
-  <div style="padding: 1.5rem; border-top: 1px solid var(--border); background: var(--bg2);">
-    <div style="display: flex; gap: 1rem; align-items: flex-end;">
-      <textarea class="chat-input" id="chatInput" style="flex: 1; background: var(--bg); border: 1px solid var(--border); color: var(--cream); padding: 1rem; border-radius: 4px; resize: none;" rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-      <button class="send-btn" id="sendBtn" onclick="sendMessage()" style="padding: 1rem 1.5rem; background: var(--gold); border: none; color: white; border-radius: 4px; cursor: pointer;">↑</button>
+  <div style="padding: 1.5rem 2.5rem; background: var(--bg2); border-top: 1px solid var(--border);">
+    <div style="display: flex; gap: 1rem; align-items: flex-end; max-width: 1000px; margin: 0 auto;">
+      <textarea class="chat-input" id="chatInput" rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="btn-premium" id="sendBtn" onclick="sendMessage()" style="height: 50px; width: 60px; padding: 0;">↑</button>
     </div>
-    <p id="inputHint" data-t="inputHint" style="font-size: 0.7rem; color: var(--cream3); text-align: right; margin-top: 0.5rem;">Enter to send</p>
+    <p id="inputHint" data-t="inputHint" style="font-size: 0.65rem; color: var(--cream3); text-align: right; margin-top: 0.6rem; letter-spacing: 0.05em;"></p>
   </div>
 </div>
 
