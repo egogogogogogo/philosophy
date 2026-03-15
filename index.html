@@ -3,39 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Talk with great philosophers like Socrates, Nietzsche, and Confucius. Philosophia is an AI-powered dialogue service.">
-<meta name="keywords" content="philosophy, AI, Socrates, Nietzsche, Confucius, chatbot, wisdom">
-<meta property="og:title" content="Philosophia — Conversations with Timeless Minds">
-<meta property="og:description" content="Engage in deep dialogues with 18 historical philosophers via AI.">
-<meta property="og:type" content="website">
+<meta name="description" content="Talk with great philosophers via AI. Philosophia offers deep conversations in multiple languages.">
+<meta name="keywords" content="philosophy, AI, Socrates, Nietzsche, Confucius, wisdom, dark mode">
 <title>Philosophia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Serif:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+KR:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<!-- Google AdSense -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
 <body>
 
-<!-- ===================== LANGUAGE SWITCHER ===================== -->
-<nav class="lang-switcher" aria-label="Language Selector">
-  <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-  <button class="lang-btn" onclick="setLanguage('ko')">KO</button>
-</nav>
+<!-- ===================== UTILITY BAR ===================== -->
+<div class="utility-bar">
+  <select class="lang-select" id="langSelect" onchange="setLanguage(this.value)" aria-label="Select Language">
+    <option value="ko">한국어</option>
+    <option value="en">English</option>
+    <option value="ja">日本語</option>
+    <option value="zh">中文</option>
+    <option value="es">Español</option>
+    <option value="fr">Français</option>
+    <option value="de">Deutsch</option>
+  </select>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
+    <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor"></svg>
+  </button>
+</div>
 
 <!-- ===================== AD OVERLAY ===================== -->
-<div class="ad-overlay" id="adOverlay" role="dialog" aria-label="Advertisement">
+<div class="ad-overlay" id="adOverlay" role="dialog">
   <div class="ad-modal">
     <div class="ad-modal-top">
       <span class="ad-modal-label" data-t="adLabel">A D V E R T I S E M E N T</span>
       <span class="ad-modal-countdown" id="adCountdown">5</span>
     </div>
-    <div class="ad-modal-content" id="adModalContent">
-      AD Area · 300 × 250
-    </div>
-    <button class="ad-skip-btn" id="adSkipBtn" disabled onclick="skipAd()" data-t="skipAd">
-      Continue →
-    </button>
+    <div class="ad-modal-content">AD Area · 300 × 250</div>
+    <button class="ad-skip-btn" id="adSkipBtn" disabled onclick="skipAd()" data-t="skipAd">Continue →</button>
   </div>
 </div>
 
@@ -53,43 +54,19 @@
     <div class="header-ornament">Philosophia · 哲學 · فلسفه</div>
     <h1 class="site-title" data-t="siteTitle">哲學人의 房</h1>
     <p class="site-tagline" data-t="siteTagline">시대를 초월한 사상가들과의 대화</p>
-    <div class="header-rule"><div class="header-rule-diamond"></div></div>
   </header>
 
-  <!-- Top Ad Banner -->
-  <div class="ad-strip" aria-label="Advertisement">
-    <div>
-      <div class="ad-strip-label" data-t="adLabel">Advertisement</div>
-      <div class="adsense-placeholder">Google AdSense · 728×90 Leaderboard</div>
-    </div>
-  </div>
-
-  <div class="layout-with-sidebar">
-    <div>
-      <p class="gallery-heading" data-t="galleryHeading">Choose a philosopher to begin your journey</p>
-      <main class="gallery-grid" id="galleryGrid" aria-label="Philosopher List"></main>
-    </div>
-    <!-- Sidebar Ad 160x600 -->
-    <aside class="sidebar-ad" aria-label="Advertisement">
-      <div class="sidebar-ad-label" data-t="adLabel">Ad</div>
-      <div class="sidebar-ad-box">160 × 600</div>
-    </aside>
-  </div>
-
-  <!-- Bottom Ad -->
-  <div class="ad-strip" aria-label="Advertisement">
-    <div>
-      <div class="ad-strip-label" data-t="adLabel">Advertisement</div>
-      <div class="adsense-placeholder">Google AdSense · 728×90</div>
-    </div>
-  </div>
+  <section class="gallery-section">
+    <p class="gallery-heading" data-t="galleryHeading" style="text-align:center; margin-bottom: 3rem; font-style: italic; color: var(--cream3);">Choose a philosopher to begin your journey</p>
+    <main class="gallery-grid" id="galleryGrid"></main>
+  </section>
 
   <footer class="site-footer">
     <p data-t="footerText">© 2026 Philosophia · AI-Powered Dialogues with Great Thinkers</p>
     <p>
-      <a onclick="showLegal('privacy')" data-t="privacy">Privacy Policy</a> · 
-      <a onclick="showLegal('terms')" data-t="terms">Terms</a> · 
-      <a onclick="showLegal('about')" data-t="about">About</a> · 
+      <a onclick="showLegal('privacy')" data-t="privacy">Privacy Policy</a>
+      <a onclick="showLegal('terms')" data-t="terms">Terms</a>
+      <a onclick="showLegal('about')" data-t="about">About</a>
       <a onclick="showLegal('contact')" data-t="contact">Contact</a>
     </p>
   </footer>
@@ -97,52 +74,37 @@
 
 <!-- ===================== SCREEN: DETAIL ===================== -->
 <div class="screen" id="screen-detail">
-  <header class="site-header" style="padding-bottom:1rem">
-    <div class="site-title" style="font-size:clamp(1.4rem,4vw,2.2rem)" data-t="siteTitle">Philosophia</div>
+  <header class="site-header" style="padding: 2rem 0 1rem;">
+    <div class="site-title" style="font-size: 2rem;" data-t="siteTitle">Philosophia</div>
   </header>
-
-  <div class="detail-back-bar">
-    <button class="back-btn" onclick="goGallery()" data-t="backToGallery">← Gallery</button>
-  </div>
-
-  <div class="ad-strip" aria-label="Advertisement" style="margin:1rem 0;">
-    <div><div class="ad-strip-label" data-t="adLabel">Advertisement</div>
-    <div class="adsense-placeholder" style="min-width:300px;min-height:50px">Google AdSense · 320×50</div></div>
-  </div>
-
-  <div id="detailHero" class="detail-hero"></div>
-  <div id="topicsWrap" class="topics-wrap"></div>
+  <div style="padding: 0 2rem;"><button class="back-btn" onclick="goGallery()" data-t="backToGallery">← Gallery</button></div>
+  <div id="detailHero"></div>
+  <div id="topicsWrap" style="padding: 0 2rem;"></div>
 </div>
 
 <!-- ===================== SCREEN: CHAT ===================== -->
 <div class="screen" id="screen-chat">
   <div class="chat-topbar">
-    <div class="chat-avatar" id="chatAvatar"></div>
-    <div>
-      <div class="chat-phil-name" id="chatName"></div>
-      <div class="chat-phil-era" id="chatEra"></div>
+    <div class="chat-avatar" id="chatAvatar" style="font-size: 2rem;"></div>
+    <div style="flex: 1;">
+      <div class="chat-phil-name" id="chatName" style="font-size: 1.2rem; font-weight: bold; color: var(--gold);"></div>
+      <div class="chat-phil-era" id="chatEra" style="font-size: 0.8rem; color: var(--cream3);"></div>
     </div>
-    <div class="chat-topic-pill" id="chatTopicPill"></div>
-    <div class="chat-actions">
-      <button class="chat-action-btn" onclick="goDetail()" data-t="changeTopic">← Change Topic</button>
-      <button class="chat-action-btn" onclick="switchPhil()" data-t="changePhil">🔄 Change Sage</button>
-      <button class="chat-action-btn" onclick="exportChat()" data-t="saveChat">💾 Save</button>
+    <div class="chat-topic-pill" id="chatTopicPill" style="font-size: 0.9rem; font-style: italic;"></div>
+    <div style="display: flex; gap: 0.5rem;">
+      <button class="chat-action-btn" onclick="goDetail()" data-t="changeTopic">Topic</button>
+      <button class="chat-action-btn" onclick="switchPhil()" data-t="changePhil">Sage</button>
     </div>
   </div>
 
-  <div class="chat-ad-bar" data-t="adLabel">Advertisement</div>
+  <div class="chat-messages" id="chatMessages"></div>
 
-  <div class="chat-body">
-    <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
-  </div>
-
-  <div class="chat-input-wrap">
-    <div class="input-row">
-      <textarea class="chat-input" id="chatInput" rows="1"
-        onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-      <button class="send-btn" id="sendBtn" onclick="sendMessage()" aria-label="Send">↑</button>
+  <div style="padding: 1.5rem; border-top: 1px solid var(--border); background: var(--bg2);">
+    <div style="display: flex; gap: 1rem; align-items: flex-end;">
+      <textarea class="chat-input" id="chatInput" style="flex: 1; background: var(--bg); border: 1px solid var(--border); color: var(--cream); padding: 1rem; border-radius: 4px; resize: none;" rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      <button class="send-btn" id="sendBtn" onclick="sendMessage()" style="padding: 1rem 1.5rem; background: var(--gold); border: none; color: white; border-radius: 4px; cursor: pointer;">↑</button>
     </div>
-    <div class="input-hint" id="inputHint" data-t="inputHint">Enter to send · Shift+Enter for newline</div>
+    <p id="inputHint" data-t="inputHint" style="font-size: 0.7rem; color: var(--cream3); text-align: right; margin-top: 0.5rem;">Enter to send</p>
   </div>
 </div>
 
