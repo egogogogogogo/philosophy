@@ -326,3 +326,37 @@ body::after{
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ===================== AD OVERLAY ===================== */
+.ad-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(20px);
+  z-index: 9999;
+  display: none; /* Hidden by default */
+  align-items: center; justify-content: center;
+  padding: 2rem;
+}
+
+.ad-overlay.show { display: flex; animation: fadeIn 0.4s ease; }
+
+.ad-modal {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  width: 100%; max-width: 400px;
+  padding: 2rem; border-radius: 4px;
+  box-shadow: 0 30px 100px rgba(0,0,0,0.8);
+  text-align: center;
+}
+
+.ad-modal-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.ad-modal-label { font-family: 'Cinzel'; font-size: 0.7rem; color: var(--gold3); letter-spacing: 0.2em; }
+.ad-modal-countdown { font-family: 'Cinzel'; font-size: 1.2rem; color: var(--gold); font-weight: 700; }
+
+.ad-modal-content {
+  height: 250px; background: rgba(255,255,255,0.02);
+  border: 1px dashed var(--border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--cream3); font-style: italic; margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
