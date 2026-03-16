@@ -90,9 +90,10 @@
       <div class="chat-phil-name" id="chatName" style="font-family: 'Cinzel'; font-weight: 700; color: #fff;"></div>
       <div class="chat-topic-pill" id="chatTopicPill" style="font-size: 0.8rem; color: var(--gold3); font-style: italic; margin-top: 0.2rem;"></div>
     </div>
-    <div style="display: flex; gap: 0.8rem;">
-      <button class="btn-premium" onclick="goDetail()" data-t="changeTopic" style="padding: 0.5rem 1rem; font-size: 0.7rem;">Topic</button>
-      <button class="btn-premium" onclick="switchPhil()" data-t="changePhil" style="padding: 0.5rem 1rem; font-size: 0.7rem;">Sage</button>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end;">
+      <button class="btn-premium" onclick="goDetail()" data-t="changeTopic" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">주제 변경</button>
+      <button class="btn-premium" onclick="switchPhil()" data-t="changePhil" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">철학인 변경</button>
+      <button class="btn-premium" onclick="saveChatLog()" data-t="saveChat" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">대화 저장</button>
     </div>
   </div>
 
