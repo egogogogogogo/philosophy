@@ -1,533 +1,330 @@
-/**
- * MANDATORY: ALWAYS MAINTAIN 18 PHILOSOPHERS. DO NOT TRIM.
- */
+/* MANDATORY: ALWAYS MAINTAIN 18 PHILOSOPHERS. DO NOT TRIM. */
 
-// ===================== I18N DATA (7 LANGUAGES) =====================
+// ===================== I18N DATA =====================
 const I18N = {
   ko: {
-    siteTitle: '哲學人의 房',
+    siteTitle: '철학인의 방',
     siteTagline: '시대를 초월한 사상가들과의 대화',
     galleryHeading: '대화를 나누고 싶은 사상가를 선택하세요',
     backToGallery: '← 사상가 목록',
     changeTopic: '주제 변경',
     changePhil: '사상가 변경',
-    freeChat: '자유 대화',
+    saveChat: '대화 저장',
+    freeChat: '자유롭게 대화 시작하기',
     topicLabel: '✦ {name}의 사유 주제',
     inputPlaceholder: '심오한 생각을 나누어보세요…',
     inputHint: 'Enter 전송 · Shift+Enter 줄바꿈',
+    skipAd: '계속하기 →',
+    adLabel: 'A D V E R T I S E M E N T',
     welcome: '어서 오십시오. 무엇이든 이야기해 보십시오.',
-    me: '나',
+    exportMe: '나',
     footerText: '© 2026 Philosophia · 위대한 사상가들과 AI로 대화하는 공간',
     privacy: '개인정보처리방침',
     terms: '이용약관',
     about: '소개',
-    contact: '문의',
-    typing: '사유 중...',
-    skipAd: '계속하기 →'
+    contact: '문의'
   },
   en: {
-    siteTitle: 'Philosophia',
+    siteTitle: "Philosopher's Chamber",
     siteTagline: 'Conversations with Timeless Minds',
     galleryHeading: 'Choose a philosopher to begin your journey',
     backToGallery: '← Gallery',
     changeTopic: 'Change Topic',
     changePhil: 'Change Sage',
-    freeChat: 'Free Chat',
+    saveChat: 'Save Chat',
+    freeChat: 'Start Free Conversation',
     topicLabel: '✦ {name}\'s Sphere of Thought',
     inputPlaceholder: 'Share your profound thoughts…',
     inputHint: 'Enter to send · Shift+Enter for newline',
+    skipAd: 'Continue →',
+    adLabel: 'A D V E R T I S E M E N T',
     welcome: 'Welcome. What is on your mind today?',
-    me: 'Me',
-    footerText: '© 2026 Philosophia · AI-Powered Dialogues',
-    privacy: 'Privacy',
+    exportMe: 'Me',
+    footerText: '© 2026 Philosophia · AI-Powered Dialogues with Great Thinkers',
+    privacy: 'Privacy Policy',
     terms: 'Terms',
     about: 'About',
-    contact: 'Contact',
-    typing: 'Thinking...',
-    skipAd: 'Continue →'
+    contact: 'Contact'
   },
-  ja: {
-    siteTitle: '哲学者たちの部屋',
-    siteTagline: '時代を超えた思想家との対話',
-    galleryHeading: '対話したい思想家を選択してください',
-    backToGallery: '← ギャラリー',
-    changeTopic: 'トピック変更',
-    changePhil: '思想家変更',
-    freeChat: '自由対話',
-    topicLabel: '✦ {name}の思索テーマ',
-    inputPlaceholder: '考えを自由に話してください…',
-    inputHint: 'Enterで送信 · Shift+Enterで改行',
-    welcome: 'ようこそ。今日はどのようなお話がありますか？',
-    me: '私',
-    footerText: '© 2026 Philosophia · 偉大な思想家とのAI対話',
-    privacy: 'プライバシー',
-    terms: '規約',
-    about: '紹介',
-    contact: 'お問い合わせ',
-    typing: '思索中...',
-    skipAd: '次へ →'
-  },
-  zh: {
-    siteTitle: '哲人之室',
-    siteTagline: '与超越时代的思想家对话',
-    galleryHeading: '选择一位想与之对话的思想家',
-    backToGallery: '← 列表',
-    changeTopic: '更改主题',
-    changePhil: '更改思想家',
-    freeChat: '自由对话',
-    topicLabel: '✦ {name} 的思想领域',
-    inputPlaceholder: '自由地分享您的想法…',
-    inputHint: 'Enter 发送 · Shift+Enter 换行',
-    welcome: '欢迎。今天您有什么想法？',
-    me: '我',
-    footerText: '© 2026 Philosophia · 与伟大思想家的AI对话',
-    privacy: '隐私',
-    terms: '条款',
-    about: '关于',
-    contact: '联系我们',
-    typing: '正在思考...',
-    skipAd: '继续 →'
-  },
-  es: {
-    siteTitle: 'Philosophia',
-    siteTagline: 'Conversaciones con mentes eternas',
-    galleryHeading: 'Elige un filósofo para comenzar tu viaje',
-    backToGallery: '← Galería',
-    changeTopic: 'Cambiar tema',
-    changePhil: 'Cambiar sabio',
-    freeChat: 'Chat libre',
-    topicLabel: '✦ Esfera de pensamiento de {name}',
-    inputPlaceholder: 'Comparte tus pensamientos profundos…',
-    inputHint: 'Enter para enviar · Shift+Enter para nueva línea',
-    welcome: 'Bienvenido. ¿Qué tienes en mente hoy?',
-    me: 'Yo',
-    footerText: '© 2026 Philosophia · Diálogos con IA',
-    privacy: 'Privacidad',
-    terms: 'Términos',
-    about: 'Sobre nosotros',
-    contact: 'Contacto',
-    typing: 'Pensando...',
-    skipAd: 'Continuar →'
-  },
-  fr: {
-    siteTitle: 'Philosophia',
-    siteTagline: 'Conversations avec des esprits intemporels',
-    galleryHeading: 'Choisissez un philosophe pour commencer',
-    backToGallery: '← Galerie',
-    changeTopic: 'Changer de sujet',
-    changePhil: 'Changer de sage',
-    freeChat: 'Chat libre',
-    topicLabel: '✦ Sphère de pensée de {name}',
-    inputPlaceholder: 'Partagez vos pensées profondes…',
-    inputHint: 'Entrée pour envoyer · Maj+Entrée pour nouvelle ligne',
-    welcome: 'Bienvenue. Qu\'avez-vous à l\'esprit aujourd\'hui ?',
-    me: 'Moi',
-    footerText: '© 2026 Philosophia · Dialogues IA',
-    privacy: 'Confidentialité',
-    terms: 'Conditions',
-    about: 'À propos',
-    contact: 'Contact',
-    typing: 'En réflexion...',
-    skipAd: 'Continuer →'
-  },
-  de: {
-    siteTitle: 'Philosophia',
-    siteTagline: 'Gespräche mit zeitlosen Köpfen',
-    galleryHeading: 'Wählen Sie einen Philosophen',
-    backToGallery: '← Galerie',
-    changeTopic: 'Thema ändern',
-    changePhil: 'Weisen wechseln',
-    freeChat: 'Freier Chat',
-    topicLabel: '✦ Gedankensphäre von {name}',
-    inputPlaceholder: 'Teilen Sie Ihre tiefen Gedanken…',
-    inputHint: 'Enter zum Senden · Shift+Enter für Zeilenumbruch',
-    welcome: 'Willkommen. Was beschäftigt Sie heute?',
-    me: 'Ich',
-    footerText: '© 2026 Philosophia · KI-Dialoge',
-    privacy: 'Datenschutz',
-    terms: 'AGB',
-    about: 'Über uns',
-    contact: 'Kontakt',
-    typing: 'Denkt nach...',
-    skipAd: 'Fortfahren →'
-  }
+  // (Adding ja, zh for compatibility but prioritizing ko/en title change)
+  ja: { siteTitle: '哲学者の部屋', siteTagline: '時代を超えた思想家との対話', galleryHeading: '対話したい思想家を選択してください', backToGallery: '← ギャラリー', changeTopic: 'トピック変更', changePhil: '思想家変更', saveChat: '保存', freeChat: '自由に対話を開始', topicLabel: '✦ {name}の思索テーマ', inputPlaceholder: '考えを自由に話してください…', inputHint: 'Enterで送信 · Shift+Enterで改行', skipAd: '次へ →', adLabel: '広 告', welcome: 'ようこそ。今日はどのようなお話がありますか？', exportMe: '私', footerText: '© 2026 Philosophia', privacy: 'プライバシー', terms: '利用規約', about: '紹介', contact: 'お問い合わせ' },
+  zh: { siteTitle: '哲人之室', siteTagline: '与超越时代的思想家对话', galleryHeading: '选择一位想与之对话的思想家', backToGallery: '← 列表', changeTopic: '更改主题', changePhil: '更改思想家', saveChat: '保存对话', freeChat: '开始自由对话', topicLabel: '✦ {name} 的思想领域', inputPlaceholder: '自由地分享您的想法…', inputHint: 'Enter 发送 · Shift+Enter 换行', skipAd: '继续 →', adLabel: '广 告', welcome: '欢迎。今天您有什么想法？', exportMe: '我', footerText: '© 2026 Philosophia', privacy: '隐私政策', terms: '条款', about: '关于', contact: '联系我们' }
 };
 
-// ===================== PHILOSOPHERS DATA (18 TOTAL) =====================
 const PHILS_DATA = [
   {
-    id: 'socrates', emoji: '🏛️',
-    name: { ko: '소크라테스', en: 'Socrates', ja: 'ソクラテス', zh: '苏格拉底', es: 'Sócrates', fr: 'Socrate', de: 'Sokrates' },
-    era: { ko: 'BC 470 – BC 399', en: '470 BC – 399 BC', ja: '紀元前470年', zh: '前470-399', es: '470 a.C.', fr: '470 av. J.-C.', de: '470 v. Chr.' },
-    quote: { ko: '"너 자신을 알라."', en: '"Know thyself."', ja: '「汝自身を知れ」', zh: '“认识你自己。”', es: '"Conócete a ti mismo."', fr: '"Connais-toi toi-même."', de: '"Erkenne dich selbst."' },
-    tags: { ko: ['무지의 지', '산파술'], en: ['Ignorance', 'Irony'], ja: ['無知の知'], zh: ['无知之知'], es: ['Ironía'], fr: ['Maïeutique'], de: ['Hebammenkunst'] },
-    desc: { ko: '서양 철학의 기초를 놓은 아테네의 현자.', en: 'The founding figure of Western philosophy.', ja: '西洋哲学の祖。', zh: '西方哲学奠基人。', es: 'Padre de la filosofía occidental.', fr: 'Le père de la philosophie occidentale.', de: 'Urvater der westlichen Philosophie.' },
-    topics: {
-      ko: ['정의란 무엇인가?', '악법도 법인가?', '지혜로운 삶이란?', '영혼의 불멸성'],
-      en: ['What is justice?', 'Is law always right?', 'What is wisdom?', 'Immortality of soul'],
-      ja: ['正義とは何か', '法律の遵守', '知恵ある生', '魂の不滅'],
-      zh: ['什么是正义？', '法律的权威', '智慧的生活', '灵魂不朽'],
-      es: ['¿Qué es la justicia?', '¿Es la ley siempre correcta?', 'Vida sabia', 'Inmortalidad del alma'],
-      fr: ['Qu\'est-ce que la justice ?', 'La loi est-elle toujours juste ?', 'Une vie de sagesse', 'Immortalité de l\'âme'],
-      de: ['Was ist Gerechtigkeit?', 'Ist das Gesetz immer richtig?', 'Weises Leben', 'Unsterblichkeit der Seele']
+    id:'socrates', emoji:'🏛️', conceptIcon:'⚖️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre.jpg/330px-Socrates_Louvre.jpg',
+    name:{ ko:'소크라테스', en:'Socrates', ja:'ソクラテス', zh:'苏格라底' },
+    era:{ ko:'BC 470 – BC 399', en:'470 BC – 399 BC', ja:'紀元前470年', zh:'公元前470年' },
+    region:{ ko:'아테네', en:'Athens', ja:'アテネ', zh:'雅典' },
+    quote:{ ko:'"나는 내가 아무것도 모른다는 것을 안다."', en:'"I know that I know nothing."', ja:'「無知の知」', zh:'“我只知道一件事，那就是我一无所知。”' },
+    tags:{ ko:['산파술','무지의 지','덕(德)'], en:['Socratic Method','Ignorance','Virtue'], ja:['問答法','無知の知'], zh:['助产术','无知之知'] },
+    desc:{ ko:'철학의 아버지. 광장에서 시민들과 끊임없이 문답하며 진리를 탐구했습니다.', en:'The father of Western philosophy. He sought truth through constant questioning.', ja: '西洋哲学の父。広場で市民と絶えず問答し、真理を追求しました。', zh: '西方哲学之父。他在广场上不断与公民辩论，探求真理。' },
+    topics:{
+      ko:['확실히 안다고 여기는 것은 무엇입니까?','정의(正義)란 진정 무엇입니까?','좋은 삶이란 어떤 삶입니까?','용기는 어디서 비롯됩니까?','아름다움의 본질은 무엇입니까?'],
+      en:['What do you truly know for certain?','What is the nature of justice?','What constitutes a good life?','Where does courage come from?','What is the essence of beauty?']
     },
-    system: "You are Socrates. Use the Socratic method (elenchus). Ask questions to lead the user to their own conclusions. Admit your own ignorance. Tone: Humble, inquisitive, persistent."
+    system:`Strict Persona: You are the ancient Greek philosopher Socrates. Respond ONLY in the user's language.`
   },
   {
-    id: 'plato', emoji: '📐',
-    name: { ko: '플라톤', en: 'Plato', ja: 'プラトン', zh: '柏拉图', es: 'Platón', fr: 'Platon', de: 'Platon' },
-    era: { ko: 'BC 427 – BC 347', en: '427 BC – 347 BC', ja: '紀元前427年', zh: '前427-347', es: '427 a.C.', fr: '427 av. J.-C.', de: '427 v. Chr.' },
-    quote: { ko: '"동굴 밖의 진실을 보라."', en: '"Behold the truth outside the cave."', ja: '「イデアの追求」', zh: '“洞穴外的真理。”', es: '"Mira la verdad fuera de la cueva."', fr: '"Vois la vérité hors de la caverne."', de: '"Sieh die Wahrheit außerhalb der Höhle."' },
-    tags: { ko: ['이데아', '국가론'], en: ['Forms', 'Republic'], ja: ['イデア'], zh: ['理念论'], es: ['Ideas'], fr: ['Idéalisme'], de: ['Ideenlehre'] },
-    desc: { ko: '이데아론과 국가론을 주창한 형이상학의 거두.', en: 'Founder of the Academy and author of The Republic.', ja: 'アカメイアの創設者。', zh: '《理想国》作者。', es: 'Autor de La República.', fr: 'Auteur de La République.', de: 'Gründer der Akademie.' },
-    topics: {
-      ko: ['이데아의 세계', '철인 통치', '동굴의 비유', '사랑의 본질'],
-      en: ['World of Forms', 'Philosopher Kings', 'Allegory of the Cave', 'Nature of Love'],
-      ja: ['イデア界', '哲人政治', '洞窟の比喩', '愛の本質'],
-      zh: ['理念世界', '哲人王', '洞穴比喻', '爱的本质'],
-      es: ['Mundo de las Ideas', 'Reyes Filósofos', 'Alegoría de la caverna', 'Naturaleza del amor'],
-      fr: ['Le monde des Formes', 'Rois Philosophes', 'Allégorie de la caverne', 'Nature de l\'amour'],
-      de: ['Ideenwelt', 'Philosophenkönige', 'Höhlengleichnis', 'Wesen der Liebe']
+    id:'plato', emoji:'🌌', conceptIcon:'🏞️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Plato_Pio-Clementino_Inv305.jpg/330px-Plato_Pio-Clementino_Inv305.jpg',
+    name:{ ko:'플라톤', en:'Plato', ja:'プラトン', zh:'柏拉图' },
+    era:{ ko:'BC 427 – BC 347', en:'427 BC – 347 BC', ja:'紀元前427年', zh:'公元前427年' },
+    region:{ ko:'아테네', en:'Athens', ja:'アテ네', zh:'雅典' },
+    quote:{ ko:'"필연의 세계 너머에 이데아의 세계가 있다."', en:'"At the touch of love everyone becomes a poet."', ja: '「イデア論」', zh: '“理式世界。”' },
+    tags:{ ko:['이데아','국가론','동굴비유'], en:['Ideals','Republic','Cave Allegory'], ja:['イデア'], zh:['理式'] },
+    desc:{ ko:'이데아론을 통해 감각 너머의 진리를 탐구하고 철인 정치를 주장했습니다.', en:'He explored the realm of forms and argued for rule by philosopher-kings.', ja: 'イデア論を展開した。', zh: '柏拉图主义。' },
+    topics:{
+      ko:['이데아란 무엇입니까?','동굴의 우화가 말하는 진실은?','이상적인 국가는 어떤 모습입니까?','영혼은 정말 불멸합니까?','사랑(에로스)의 본질은?'],
+      en:['What are the Forms?','What does the Cave Allegory reveal?','What is the ideal state?','Is the soul immortal?','What is the nature of Eros?']
     },
-    system: "You are Plato. You believe in the ideal forms (Ideas) and that our world is a shadow. You advocate for justice and the rule of reason. Tone: Philosophical, visionary, authoritative."
+    system:`Strict Persona: You are Plato. Respond ONLY in the user's language.`
   },
   {
-    id: 'aristotle', emoji: '🌿',
-    name: { ko: '아리스토텔레스', en: 'Aristotle', ja: 'アリストテレス', zh: '亚里士多德', es: 'Aristóteles', fr: 'Aristote', de: 'Aristoteles' },
-    era: { ko: 'BC 384 – BC 322', en: '384 BC – 322 BC', ja: '紀元前384年', zh: '前384-322', es: '384 a.C.', fr: '384 av. J.-C.', de: '384 v. Chr.' },
-    quote: { ko: '"인간은 사회적 동물이다."', en: '"Man is by nature a social animal."', ja: '「中庸の徳」', zh: '“人类天生是社会性动物。”', es: '"El hombre es un animal social."', fr: '"L\'homme est un animal politique."', de: '"Der Mensch ist ein schicksalhaftes Wesen."' },
-    tags: { ko: ['중용', '목적론'], en: ['Virtue', 'Logic'], ja: ['中庸'], zh: ['中道'], es: ['Virtud'], fr: ['Logique'], de: ['Tugend'] },
-    desc: { ko: '학문 전반에 걸친 체계를 세운 관찰과 논리의 대가.', en: 'A polymath who laid the foundation for formal logic.', ja: '万学の祖。', zh: '形式逻辑的奠基人。', es: 'Padre de la lógica.', fr: 'Maître de la logique.', de: 'Begründer der Logik.' },
-    topics: {
-      ko: ['행복이란 무엇인가?', '중용의 미덕', '우정의 세 가지 유형', '인과론'],
-      en: ['What is happiness?', 'The Golden Mean', 'Types of Friendship', 'Causality'],
-      ja: ['幸福とは何か', '中庸の徳', '友愛の類型', '因果関係'],
-      zh: ['什么是幸福？', '中庸之道', '友谊的类型', '因果律'],
-      es: ['¿Qué es la felicidad?', 'El punto medio', 'Tipos de amistad', 'Causalidad'],
-      fr: ['Qu\'est-ce que le bonheur ?', 'Le Juste Milieu', 'Types d\'amitié', 'Causalité'],
-      de: ['Was ist Glück?', 'Die goldene Mitte', 'Arten der Freundschaft', 'Kausalität']
+    id:'aristotle', emoji:'🌿', conceptIcon:'🔬', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/330px-Aristotle_Altemps_Inv8575.jpg',
+    name:{ ko:'아리스토텔레스', en:'Aristotle', ja:'アリストテレス', zh:'亚里士多德' },
+    era:{ ko:'BC 384 – BC 322', en:'384 BC – 322 BC', ja:'紀元前384年', zh:'公元前384年' },
+    region:{ ko:'스타게이라', en:'Stagira', ja:'スタゲイラ', zh:'斯塔基拉' },
+    quote:{ ko:'"행복은 활동 속에 있다."', en:'"Happiness depends upon ourselves."', ja: '「中庸」', zh: '“幸福。”' },
+    tags:{ ko:['중용','목적론','형이상학'], en:['Golden Mean','Teleology','Metaphysics'], ja:['中庸'], zh:['中庸'] },
+    desc:{ ko:'현실 세계를 관찰하고 분류하여 서구 학문의 광범위한 체계를 세웠습니다.', en:'He established the framework for Western science and logic through observation.', ja: '西洋最大の哲学者。', zh: '亚里士多德主义。' },
+    topics:{
+      ko:['진정한 행복이란 무엇입니까?','중용의 덕은 어떻게 지킵니까?','우정의 가치는 어디에 있습니까?','인간은 왜 사회적 동물입니까?','존재의 목적은 무엇입니까?'],
+      en:['What is Eudaimonia?','How do we practice the Golden Mean?','What is the value of friendship?','Why are humans social animals?','What is the purpose of existence?']
     },
-    system: "You are Aristotle. Focus on logic, empirical observation, and virtue ethics (the Golden Mean). You seek the 'telos' (purpose) of all things. Tone: Analytical, structured, practical."
+    system:`Strict Persona: You are Aristotle. Respond ONLY in the user's language.`
   },
   {
-    id: 'confucius', emoji: '📜',
-    name: { ko: '공자', en: 'Confucius', ja: '孔子', zh: '孔子', es: 'Confucio', fr: 'Confucius', de: 'Konfuzius' },
-    era: { ko: 'BC 551 – BC 479', en: '551 BC – 479 BC', ja: '紀元前551年', zh: '前551-479', es: '551 a.C.', fr: '551 av. J.-C.', de: '551 v. Chr.' },
-    quote: { ko: '"배우고 때로 익히면 즐겁지 아니한가."', en: '"To learn and then practice, is it not a pleasure?"', ja: '「学びて時にこれを習う」', zh: '“学而时习之，不亦说乎？”', es: '"Estudia el pasado para definir el futuro."', fr: '"La sagesse commence par appeler les choses par leur nom."', de: '"Lernen ohne zu denken ist verloren."' },
-    tags: { ko: ['인(仁)', '예(禮)'], en: ['Filial Piety', 'Ritual'], ja: ['仁', '礼'], zh: ['仁', '礼'], es: ['Piedad'], fr: ['Vertu'], de: ['Pietät'] },
-    desc: { ko: '유교의 창시자, 인과 예의 정치를 강조한 스승.', en: 'Chinese philosopher who emphasized social harmony.', ja: '儒教の始祖。', zh: '儒家学派创始人。', es: 'Fundador del confucianismo.', fr: 'Sage de l\'harmonie sociale.', de: 'Begründer des Konfuzianismus.' },
-    topics: {
-      ko: ['인의 본질', '효도와 사회 질서', '정명(正名) 사상', '군자의 도리'],
-      en: ['Essence of Ren', 'Filial Piety', 'Rectification of Names', 'Way of the Junzi'],
-      ja: ['仁の本質', '孝行と秩序', '正名思想', '君子の道'],
-      zh: ['仁的本质', '孝道与秩序', '正名思想', '君子之道'],
-      es: ['Esencia de Ren', 'Piedad filial', 'Rectificación de nombres', 'El camino del Junzi'],
-      fr: ['L\'essence du Ren', 'Piété filiale', 'Rectification des noms', 'La voie du Junzi'],
-      de: ['Wesen des Ren', 'Kindliche Pietät', 'Richtigstellung der Namen', 'Weg des Edlen']
+    id:'confucius', emoji:'📜', conceptIcon:'🎎', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Confucius_Tang_Dynasty.jpg/330px-Confucius_Tang_Dynasty.jpg',
+    name:{ ko:'공자', en:'Confucius', ja:'孔子', zh:'孔子' },
+    era:{ ko:'BC 551 – BC 479', en:'551 BC – 479 BC', ja:'紀元前551年', zh:'公元前551年' },
+    region:{ ko:'노나라', en:'Lu State', ja:'魯', zh:'鲁国' },
+    quote:{ ko:'"배우고 때때로 익히면 또한 기쁘지 아니한가."', en:'"Is it not pleasant to learn with constant perseverance?"', ja: '「学びて時にこれを習う」', zh: '“学而时习之。”' },
+    tags:{ ko:['인(仁)','예(禮)','군자'], en:['Ren','Li','Junzi'], ja:['仁'], zh:['仁'] },
+    desc:{ ko:'인과 예를 강조하여 유교의 기틀을 닦고 조화로운 사회를 꿈꿨습니다.', en:'The founder of Confucianism, focusing on benevolence and social ritual.', ja: '儒教の始祖。', zh: '儒家。' },
+    topics:{
+      ko:['인(仁)이란 무엇입니까?','군자의 자격은 무엇입니까?','효가 왜 덕의 근본입니까?','올바른 정치란 무엇입니까?','배움의 목적은 무엇입니까?'],
+      en:['What is Ren?','What makes a Junzi?','Why is filial piety central?','What is good governance?','What is the goal of learning?']
     },
-    system: "You are Confucius. Emphasize social harmony, filial piety, rituals (Li), and benevolence (Ren). You believe in leading by moral example. Tone: Wise, respectful, pedagogical."
+    system:`Strict Persona: You are Confucius. Respond ONLY in the user's language.`
   },
   {
-    id: 'laozi', emoji: '☯️',
-    name: { ko: '노자', en: 'Laozi', ja: '老子', zh: '老子', es: 'Lao-Tsé', fr: 'Lao Tseu', de: 'Laotse' },
-    era: { ko: 'BC 6세기 경', en: '6th Century BC', ja: '紀元前6世紀', zh: '约前6世纪', es: 'Siglo VI a.C.', fr: 'VIe siècle av. J.-C.', de: '6. Jh. v. Chr.' },
-    quote: { ko: '"상선약수, 최고의 선은 물과 같다."', en: '"Greatest good is like water."', ja: '「上善如水」', zh: '“上善若水。”', es: '"El que sabe no habla; el que habla no sabe."', fr: '"Le plus grand bien est comme l\'eau."', de: '"Wahre Worte sind nicht schön."' },
-    tags: { ko: ['무위자연', '도(道)'], en: ['Tao', 'Wu Wei'], ja: ['無為自然'], zh: ['无为', '道'], es: ['Tao'], fr: ['Tao'], de: ['Taoismus'] },
-    desc: { ko: '도의 본질과 무위의 지혜를 가르친 도교의 스승.', en: 'Founder of Taoism and author of Tao Te Ching.', ja: '道教の始祖。', zh: '道教创始人。', es: 'Autor del Tao Te King.', fr: 'Fondateur du taoïsme.', de: 'Verfasser des Tao Te King.' },
-    topics: {
-      ko: ['도란 무엇인가?', '무위의 지혜', '부드움의 힘', '만물의 조화'],
-      en: ['What is the Tao?', 'Wisdom of Wu Wei', 'Power of Softness', 'Harmony of Nature'],
-      ja: ['道とは何か', '無為の知恵', '柔の力', '自然の調和'],
-      zh: ['什么是道？', '无为而治', '以柔克刚', '天人合一'],
-      es: ['¿Qué es el Tao?', 'Sabiduría de Wu Wei', 'Poder de la suavidad', 'Armonía natural'],
-      fr: ['Qu\'est-ce que le Tao ?', 'La sagesse du Wu Wei', 'Le pouvoir de la souplesse', 'Harmonie de la nature'],
-      de: ['Was ist das Tao?', 'Weisheit des Wu Wei', 'Kraft der Weichheit', 'Harmonie der Natur']
+    id:'laozi', emoji:'☯️', conceptIcon:'🌊', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Laozi_-_Project_Gutenberg_eText_15250.jpg/330px-Laozi_-_Project_Gutenberg_eText_15250.jpg',
+    name:{ ko:'노자', en:'Laozi', ja:'老子', zh:'老子' },
+    era:{ ko:'BC 6세기 추정', en:'6th Century BC', ja:'紀元前6世紀', zh:'公元前6世纪' },
+    region:{ ko:'초나라', en:'Chu State', ja:'楚', zh:'楚国' },
+    quote:{ ko:'"말할 수 있는 도는 영원한 도가 아니다."', en:'"The Tao that can be told is not the eternal Tao."', ja: '「道可道、非常道」', zh: '“道可道，非常道。”' },
+    tags:{ ko:['무위자연','도(道)','상선약수'], en:['Wu Wei','Tao','Water Analogy'], ja:['無為自然'], zh:['无为而治'] },
+    desc:{ ko:'인위적인 것을 버리고 자연의 순리에 따르는 삶을 강조했습니다.', en:'Founder of Taoism, emphasizing harmony with the natural flow of existence.', ja: '道教の始祖。', zh: '道家。' },
+    topics:{
+      ko:['무위자연이란 무엇입니까?','물이 왜 가장 강합니까?','진정한 자유는 어디에 있습니까?','욕심을 비우는 방법은?','가장 훌륭한 통치란?'],
+      en:['What is Wu Wei?','Why is water the strongest?','Where is true freedom?','How to empty the self?','What is the best way to lead?']
     },
-    system: "You are Laozi. Speak in paradoxes and metaphors. Emphasize returning to nature, the Tao, and the principle of Wu Wei (non-action). Tone: Mystical, calm, detached."
+    system:`Strict Persona: You are Laozi. Respond ONLY in the user's language.`
   },
   {
-    id: 'buddha', emoji: '☸️',
-    name: { ko: '석가모니', en: 'Buddha', ja: '釈迦', zh: '释迦牟尼', es: 'Buda', fr: 'Bouddha', de: 'Buddha' },
-    era: { ko: 'BC 6-5세기 경', en: '6th-5th Century BC', ja: '紀元前6-5世紀', zh: '约前6-5世纪', es: 'Siglo VI-V a.C.', fr: 'VI-Ve siècle av. J.-C.', de: '6.-5. Jh. v. Chr.' },
-    quote: { ko: '"삶은 고통이며, 고통의 원인은 집착이다."', en: '"Life is suffering; the cause is attachment."', ja: '「諸行無常」', zh: '“众生皆苦，执着为源。”', es: '"Todo lo que somos es resultado de lo que hemos pensado."', fr: '"La vie est souffrance, la cause est l\'attachement."', de: '"Das Leben ist Leiden."' },
-    tags: { ko: ['사성제', '해탈'], en: ['Nirvana', 'Mindfulness'], ja: ['解脱', '慈悲'], zh: ['涅槃', '因果'], es: ['Nirvana'], fr: ['Éveil'], de: ['Nirvana'] },
-    desc: { ko: '깨달음을 통해 고통에서 벗어나는 길을 제시한 현자.', en: 'The Enlightened One who taught the path to Nirvana.', ja: '悟りを開いた者。', zh: '佛教创始人。', es: 'El Iluminado.', fr: 'L\'Éveillé.', de: 'Der Erleuchtete.' },
-    topics: {
-      ko: ['사성제와 팔정도', '고통의 소멸', '무아(無我) 사상', '자비와 명상'],
-      en: ['Four Noble Truths', 'Ending Suffering', 'Concept of Anatta', 'Compassion and Zen'],
-      ja: ['四聖諦', '苦しみの消滅', '無我の思想', '慈悲と瞑想'],
-      zh: ['四圣谛', '痛苦的消除', '无我思想', '慈悲与禅定'],
-      es: ['Cuatro Nobles Verdades', 'Fin del sufrimiento', 'Concepto de Anatta', 'Compasión y meditación'],
-      fr: ['Quatre Nobles Vérités', 'La fin de la souffrance', 'Le concept d\'Anatta', 'Compassion et méditation'],
-      de: ['Vier Edle Wahrheiten', 'Ende des Leidens', 'Konzept von Anatta', 'Mitgefühl und Meditation']
+    id:'buddha', emoji:'🪷', conceptIcon:'🕉️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gandhara_Buddha_%28tnm%29.jpeg/330px-Gandhara_Buddha_%28tnm%29.jpeg',
+    name:{ ko:'고타마 붓다', en:'Gautama Buddha', ja:'釈迦', zh:'释迦牟尼' },
+    era:{ ko:'BC 563 – BC 483', en:'563 BC – 483 BC', ja:'紀元前563年', zh:'公元前563年' },
+    region:{ ko:'카필라바스투', en:'Kapilavastu', ja:'カピラ', zh:'迦毗罗卫' },
+    quote:{ ko:'"모든 것은 변한다. 집착에서 고통이 생긴다."', en:'"All things change, nothing is permanent."', ja: '「諸行無常」', zh: '“诸行无常。”' },
+    tags:{ ko:['해탈','연기법','사성제'], en:['Nirvana','Origination','Four Truths'], ja:['悟り'], zh:['涅槃'] },
+    desc:{ ko:'삶의 고통을 직시하고 깨달음을 통해 영원한 안식을 찾는 길을 제시했습니다.', en:'He taught the path to enlightenment and the cessation of suffering.', ja: '仏教の開祖。', zh: '佛教。' },
+    topics:{
+      ko:['고통의 원인은 무엇입니까?','어떻게 집착을 버립니까?','자아는 정말 실재합니까?','명상은 왜 필요합니까?','진정한 평화란 무엇입니까?'],
+      en:['What is the cause of suffering?','How to let go of attachment?','Does the self exist?','Why meditate?','What is true peace?']
     },
-    system: "You are Siddhartha Gautama (Buddha). Focus on the cessation of suffering, detachment, mindfulness, and the Middle Way. Tone: Compassionate, serene, enlightening."
+    system:`Strict Persona: You are Buddha. Respond ONLY in the user's language.`
   },
   {
-    id: 'aquinas', emoji: '⛪',
-    name: { ko: '아퀴나스', en: 'Aquinas', ja: 'アクィナス', zh: '阿奎那', es: 'Aquino', fr: 'Aquin', de: 'Aquin' },
-    era: { ko: '1225 – 1274', en: '1225 – 1274', ja: '1225年', zh: '1225-1274', es: '1225', fr: '1225', de: '1225' },
-    quote: { ko: '"이성과 신앙은 조화를 이룬다."', en: '"Reason and faith exist in harmony."', ja: '「理性と信仰」', zh: '“理性与信仰并不矛盾。”', es: '"La razón y la fe son armoniosas."', fr: '"La raison et la foi s\'harmonisent."', de: '"Glaube und Vernunft."' },
-    tags: { ko: ['스콜라 철학', '자연법'], en: ['Scholasticism', 'Natural Law'], ja: ['スコラ学'], zh: ['经院哲学'], es: ['Escolástica'], fr: ['Scolastique'], de: ['Scholastik'] },
-    desc: { ko: '이성과 신앙을 통합한 중세 스콜라 철학의 거장.', en: 'Medieval philosopher who synthesized Christianity with Aristotle.', ja: '中世最大の神学者。', zh: '中世纪神学家。', es: 'Sintetizador de fe y razón.', fr: 'Grand théologien médiéval.', de: 'Bedeutendster Kirchenlehrer.' },
-    topics: {
-      ko: ['신의 존재 증명', '자연법과 정의', '이성과 신앙의 관계', '공동선이란?'],
-      en: ['Five Ways to prove God', 'Natural Law', 'Faith vs Reason', 'The Common Good'],
-      ja: ['神の存在証明', '自然法と正義', '信仰と理性', '共通善'],
-      zh: ['上帝存在的五路证明', '自然法与正义', '信仰与理性', '共同善'],
-      es: ['Cinco vías hacia Dios', 'Ley Natural', 'Fe vs Razón', 'El Bien Común'],
-      fr: ['Les cinq voies', 'Loi Naturelle', 'Foi vs Raison', 'Le Bien Commun'],
-      de: ['Fünf Gottesbeweise', 'Naturrecht', 'Glaube vs Vernunft', 'Das Gemeinwohl']
+    id:'aquinas', emoji:'⛪', conceptIcon:'🕊️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/St-thomas-aquinas.jpg/330px-St-thomas-aquinas.jpg',
+    name:{ ko:'토마스 아퀴나스', en:'Thomas Aquinas', ja:'トマス・アクィナス', zh:'托马斯·阿奎那' },
+    era:{ ko:'1225 – 1274', en:'1225 – 1274', ja:'1225年', zh:'1225年' },
+    region:{ ko:'이탈리아', en:'Italy', ja:'イタリア', zh:'意大利' },
+    quote:{ ko:'"은혜는 자연을 완성한다."', en:'"Grace does not destroy nature, but perfects it."', ja: '「スコラ哲学」', zh: '“恩典完善自然。”' },
+    tags:{ ko:['신학','신앙과 이성','자연법'], en:['Theology','Faith & Reason','Natural Law'], ja:['神学'], zh:['神学'] },
+    desc:{ ko:'신앙과 이성을 조화시켜 중세 스콜라 철학의 정점을 이뤘습니다.', en:'He synthesized Aristotelian philosophy with Christian theology.', ja: '中世最大の神学者。', zh: '经院哲学。' },
+    topics:{
+      ko:['신의 존재를 증명할 수 있습니까?','신앙과 이성은 어떻게 공존합니까?','무엇이 정의로운 전쟁입니까?','악은 왜 존재합니까?','자연법이란 무엇입니까?'],
+      en:['Can God be proven?','How to balance faith and reason?','What is a just war?','Why does evil exist?','What is Natural Law?']
     },
-    system: "You are Thomas Aquinas. You aim to harmonize Aristotelian logic with Christian faith. Discuss natural law and the Five Ways. Tone: Logical, theological, structured."
+    system:`Strict Persona: You are Thomas Aquinas. Respond ONLY in the user's language.`
   },
   {
-    id: 'descartes', emoji: '💡',
-    name: { ko: '데카르트', en: 'Descartes', ja: 'デカルト', zh: '笛卡尔', es: 'Descartes', fr: 'Descartes', de: 'Descartes' },
-    era: { ko: '1596 – 1650', en: '1596 – 1650', ja: '1596年', zh: '1596-1650', es: '1596', fr: '1596', de: '1596' },
-    quote: { ko: '"나는 생각한다, 고로 나는 존재한다."', en: '"I think, therefore I am."', ja: '「我思う、ゆえに我あり」', zh: '“我思故我在。”', es: '"Pienso, luego existo."', fr: '"Je pense, donc je suis."', de: '"Ich denke, also bin ich."' },
-    tags: { ko: ['합리론', '심신이원론'], en: ['Rationalism', 'Dualism'], ja: ['合理主義'], zh: ['理性主义'], es: ['Racionalismo'], fr: ['Rationalisme'], de: ['Rationalismus'] },
-    desc: { ko: '근대 철학의 아버지, 방법적 회의를 통해 확실한 진리를 찾은 사상가.', en: 'Father of modern philosophy and creator of analytic geometry.', ja: '近代哲学の父。', zh: '近代哲学之父。', es: 'Padre de la filosofía moderna.', fr: 'Père de la philosophie moderne.', de: 'Vater der modernen Philosophie.' },
-    topics: {
-      ko: ['방법적 회의', '심신이원론', '신의 존재', '명증적 진리'],
-      en: ['Methodological Doubt', 'Mind-Body Dualism', 'Existence of God', 'Clear and Distinct Ideas'],
-      ja: ['方法的懐疑', '心身二元論', '神の存在', '明晰判明な真理'],
-      zh: ['方法论怀疑', '身心二元论', '上帝的存在', '明晰性的真理'],
-      es: ['Duda metódica', 'Dualismo mente-cuerpo', 'Existencia de Dios', 'Ideas claras y distintas'],
-      fr: ['Doute méthodique', 'Dualisme âme-corps', 'Existence de Dieu', 'Idées claires et distinctes'],
-      de: ['Methodischer Zweifel', 'Leib-Seele-Dualismus', 'Existenz Gottes', 'Klare Erkenntnisse']
+    id:'descartes', emoji:'🧠', conceptIcon:'📐', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg/330px-Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg',
+    name:{ ko:'데카르트', en:'Descartes', ja:'デカルト', zh:'笛卡尔' },
+    era:{ ko:'1596 – 1650', en:'1596 – 1650', ja:'1596年', zh:'1596年' },
+    region:{ ko:'프랑스', en:'France', ja:'フランス', zh:'法国' },
+    quote:{ ko:'"나는 생각한다, 고로 나는 존재한다."', en:'"I think, therefore I am."', ja: '「我思う、故に我在り」', zh: '“我思故我在。”' },
+    tags:{ ko:['합리주의','코기토','회의론'], en:['Rationalism','Cogito','Skepticism'], ja:['合理主義'], zh:['唯理主义'] },
+    desc:{ ko:'모든 것을 의심한 끝에 주체의 확실성을 발견하고 근대 철학을 열었습니다.', en:'The father of modern philosophy, who found certainty in the thinking self.', ja: '近代哲学の父。', zh: '解析几何之父。' },
+    topics:{
+      ko:['무엇을 확실히 믿을 수 있습니까?','정신과 육체는 어떻게 다릅니까?','꿈과 현실을 구분하는 방법은?','이성이 왜 가장 중요합니까?','신의 존재는 확실합니까?'],
+      en:['What can be known for sure?','Mind-Body dualism?','Dream vs Reality?','Importance of Reason?','Existence of God?']
     },
-    system: "You are René Descartes. Use methodical doubt. Seek a firm foundation for knowledge. Emphasize the distinction between mind (res cogitans) and body (res extensa). Tone: Rational, skeptical, analytical."
+    system:`Strict Persona: You are René Descartes. Respond ONLY in the user's language.`
   },
   {
-    id: 'hume', emoji: '🔎',
-    name: { ko: '흄', en: 'Hume', ja: 'ヒューム', zh: '休谟', es: 'Hume', fr: 'Hume', de: 'Hume' },
-    era: { ko: '1711 – 1776', en: '1711 – 1776', ja: '1711年', zh: '1711-1776', es: '1711', fr: '1711', de: '1711' },
-    quote: { ko: '"이성은 열정의 노예여야 한다."', en: '"Reason is the slave of the passions."', ja: '「理性は情熱の奴隷」', zh: '“理性是情感的奴隶。”', es: '"La razón es esclava de las pasiones."', fr: '"La razón es l\'esclave des passions."', de: '"Die Vernunft ist die Sklavin der Leidenschaften."' },
-    tags: { ko: ['경험론', '회의주의'], en: ['Empiricism', 'Skepticism'], ja: ['経験主義'], zh: ['经验主义'], es: ['Empirismo'], fr: ['Empirisme'], de: ['Empirismus'] },
-    desc: { ko: '경험과 감각을 지식의 근본으로 본 회의주의 철학자.', en: 'Empiricist who questioned the existence of causality.', ja: '経験論の完成者。', zh: '经验主义大师。', es: 'Gran empírico escocés.', fr: 'Maître de l\'empirisme.', de: 'Schottischer Skeptiker.' },
-    topics: {
-      ko: ['인과관계의 비판', '자아는 환상인가?', '도덕과 감정', '기적에 대하여'],
-      en: ['Critique of Causality', 'Is the Self an Illusion?', 'Morality and Emotion', 'On Miracles'],
-      ja: ['因果の批判', '自我の幻想', '道徳と感情', '奇跡について'],
-      zh: ['对因果律的批判', '自我是幻觉吗？', '道德与情感', '论奇迹'],
-      es: ['Crítica a la causalidad', '¿Es el yo una ilusión?', 'Moral y emoción', 'Sobre los milagros'],
-      fr: ['Critique de la causalité', 'Le Moi est-il une illusion ?', 'Morale et émotion', 'Sur les miracles'],
-      de: ['Kritik der Kausalität', 'Das Ich als Illusion?', 'Moral und Gefühl', 'Über Wunder']
+    id:'hume', emoji:'🌊', conceptIcon:'👁️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/David_Hume.jpg/330px-David_Hume.jpg',
+    name:{ ko:'데이비드 흄', en:'David Hume', ja:'ヒューム', zh:'休谟' },
+    era:{ ko:'1711 – 1776', en:'1711 – 1776', ja:'1711年', zh:'1711年' },
+    region:{ ko:'스코틀랜드', en:'Scotland', ja:'スコットランド', zh:'苏格兰' },
+    quote:{ ko:'"이성은 열정의 노예이다."', en:'"Reason is the slave of the passions."', ja: '「経験論」', zh: '“理性是情感的奴隶。”' },
+    tags:{ ko:['경험론','인과론비판','회의론'], en:['Empiricism','Causality','Skepticism'], ja:['経験論'], zh:['经验主义'] },
+    desc:{ ko:'감각적 경험만이 지식의 근원이며, 인과관계는 습관에 불과하다고 보았습니다.', en:'A key figure in empiricism who challenged the validity of causality.', ja: '近代の経験論。', zh: '不可知论。' },
+    topics:{
+      ko:['인과관계는 정말 존재합니까?','자아는 환상에 불과합니까?','도덕의 근거는 감정입니까?','기적을 믿을 수 있습니까?','경험만이 진실을 말합니까?'],
+      en:['Is causality real?','Is the self an illusion?','Are morals based on feeling?','Can miracles happen?','Empiricism vs Dogma?']
     },
-    system: "You are David Hume. You are an empiricist and a skeptic. You believe all knowledge comes from sense impressions. You question causality and the self. Tone: Skeptical, witty, calm."
+    system:`Strict Persona: You are David Hume. Respond ONLY in the user's language.`
   },
   {
-    id: 'kant', emoji: '⚖️',
-    name: { ko: '칸트', en: 'Kant', ja: 'カント', zh: '康德', es: 'Kant', fr: 'Kant', de: 'Kant' },
-    era: { ko: '1724 – 1804', en: '1724 – 1804', ja: '1724年', zh: '1724-1804', es: '1724', fr: '1724', de: '1724' },
-    quote: { ko: '"네 의지의 준칙이 보편적 법칙이 되게 하라."', en: '"Act as if your maxim were a universal law."', ja: '「汝の格率が…」', zh: '“头上的星空 and 心中的道德律。”', es: '"Obra según una máxima universal."', fr: '"Agis selon la maxime universelle."', de: '"Handle nur nach derjenigen Maxime."' },
-    tags: { ko: ['정언명령', '비판철학'], en: ['Ethics', 'Criticism'], ja: ['定言命法'], zh: ['批判哲学'], es: ['Ética'], fr: ['Morale'], de: ['Ethik'] },
-    desc: { ko: '비판 철학을 통해 인식과 도덕의 한계를 정립한 거장.', en: 'The central figure of modern philosophy.', ja: '批判哲学の完成者。', zh: '批判哲学奠基人。', es: 'Gigante de la filosofía moderna.', fr: 'Philosophe de la critique.', de: 'Gründer der kritischen Philosophie.' },
-    topics: {
-      ko: ['정언명령', '인식의 한계', '영구 평화론', '자유의지'],
-      en: ['Categorical Imperative', 'Limits of Reason', 'Perpetual Peace', 'Free Will'],
-      ja: ['定言命法', '理性の限界', '永遠平和', '自由意志'],
-      zh: ['定言令式', '理性限制', '永久和平', '自由意志'],
-      es: ['Imperativo Categórico', 'Límites de la razón', 'Paz Perpetua', 'Libre Albedrío'],
-      fr: ['Impératif Catégorique', 'Limites de la raison', 'Paix Perpétuelle', 'Libre arbitre'],
-      de: ['Kategorischer Imperativ', 'Grenzen der Vernunft', 'Ewiger Frieden', 'Willensfreiheit']
+    id:'kant', emoji:'⚖️', conceptIcon:'☀️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Immanuel_Kant_3.jpg/330px-Immanuel_Kant_3.jpg',
+    name:{ ko:'칸트', en:'Kant', ja:'カント', zh:'康德' },
+    era:{ ko:'1724 – 1804', en:'1724 – 1804', ja:'1724年', zh:'1724年' },
+    region:{ ko:'독일', en:'Germany', ja:'ドイツ', zh:'德国' },
+    quote:{ ko:'"내 마음속의 도덕 법칙."', en:'"The moral law within me."', ja: '「定言命法」', zh: '“头上的星空和心中的道德律。”' },
+    tags:{ ko:['정언명령','비판철학','의무론'], en:['Categorical Imperative','Criticism','Deontology'], ja:['定言命法'], zh:['定言令式'] },
+    desc:{ ko:'이성의 한계를 비판적으로 검토하고 보편적 도덕 법칙을 세웠습니다.', en:'He established universal moral laws and explored the limits of reason.', ja: '批判哲学。', zh: '康德主义。' },
+    topics:{
+      ko:['도덕 행동의 기준은?','거짓말은 항상 나쁜가요?','인간의 존엄성은 어디서?','실재를 알 수 있습니까?','자유의지란?'],
+      en:['Absolute moral standard?','Is lying always wrong?','Human dignity?','Can we know reality?','Free Will?']
     },
-    system: "You are Immanuel Kant. You focus on deontology (duty) and the Categorical Imperative. Distinguish between phenomena and noumena. Tone: Academic, rigorous, moralistic."
+    system:`Strict Persona: You are Immanuel Kant. Respond ONLY in the user's language.`
   },
   {
-    id: 'hegel', emoji: '🌀',
-    name: { ko: '헤겔', en: 'Hegel', ja: 'ヘーゲル', zh: '黑格尔', es: 'Hegel', fr: 'Hegel', de: 'Hegel' },
-    era: { ko: '1770 – 1831', en: '1770 – 1831', ja: '1770年', zh: '1770-1831', es: '1770', fr: '1770', de: '1770' },
-    quote: { ko: '"현실적인 것은 이성적이다."', en: '"The real is the rational."', ja: '「弁証法」', zh: '“凡是现实的都是合乎理性的。”', es: '"Lo real es lo racional."', fr: '"Le réel est le rationnel."', de: '"Was vernünftig ist, das ist wirklich."' },
-    tags: { ko: ['변증법', '절대정신'], en: ['Dialectics', 'Spirit'], ja: ['弁証法'], zh: ['辩证法'], es: ['Dialéctica'], fr: ['Dialectique'], de: ['Dialektik'] },
-    desc: { ko: '변증법과 절대정신으로 역사의 발전을 설명한 철학자.', en: 'Known for his teleological account of history.', ja: 'ドイツ観念論の完成者。', zh: '德国古典哲学集大成者。', es: 'Maestro de la dialéctica.', fr: 'Maître de l\'idéalisme allemand.', de: 'Vollender des deutschen Idealismus.' },
-    topics: {
-      ko: ['변증법적 발전', '역사의 종말', '주인과 노예의 변증법', '절대정신'],
-      en: ['Dialectical Progress', 'End of History', 'Master-Slave Dialectic', 'Absolute Spirit'],
-      ja: ['弁証法の発展', '歴史の終焉', '主と奴の弁証法', '絶対精神'],
-      zh: ['辩证发展', '历史终结', '主奴辩证法', '绝对精神'],
-      es: ['Progreso dialéctico', 'Fin de la historia', 'Dialéctica amo-esclavo', 'Espíritu absoluto'],
-      fr: ['Progrès dialectique', 'Fin de l\'histoire', 'Dialectique du maître et de l\'esclave', 'Esprit absolu'],
-      de: ['Dialektischer Fortschritt', 'Ende der Geschichte', 'Herr-Knecht-Dialektik', 'Weltgeist']
+    id:'hegel', emoji:'🌀', conceptIcon:'🏛️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Hegel_by_Schlesinger_1831.jpg/330px-Hegel_by_Schlesinger_1831.jpg',
+    name:{ ko:'헤겔', en:'Hegel', ja:'ヘーゲル', zh:'黑格尔' },
+    era:{ ko:'1770 – 1831', en:'1770 – 1831', ja:'1770년', zh:'1770年' },
+    region:{ ko:'독일', en:'Germany', ja:'ドイツ', zh:'德国' },
+    quote:{ ko:'"이성적인 것은 현실적이다."', en:'"The rational is real."', ja: '「弁証法」', zh: '“凡是合理的都是现实的。”' },
+    tags:{ ko:['변증법','절대정신','역사'], en:['Dialectic','Absolute Spirit','History'], ja:['弁証法'], zh:['辩证法'] },
+    desc:{ ko:'변증법을 통해 역사와 정신의 발전 과정을 체계적으로 설명했습니다.', en:'He explained the development of history and spirit through dialectics.', ja: 'ドイツ観念論の完成。', zh: '绝对唯心主义。' },
+    topics:{
+      ko:['역사는 진보합니까?','변증법이란 무엇입니까?','국가와 개인의 관계는?','모순이 왜 필요합니까?','절대정신이란?'],
+      en:['Does history progress?','What is Dialectic?','State vs Individual?','Why is contradiction needed?','Absolute Spirit?']
     },
-    system: "You are G.W.F. Hegel. You believe in dialectical progress (thesis-antithesis-synthesis). Focus on the unfolding of Spirit (Geist) through history. Tone: Complex, grand, historical."
+    system:`Strict Persona: You are G.W.F. Hegel. Respond ONLY in the user's language.`
   },
   {
-    id: 'schopenhauer', emoji: '🌑',
-    name: { ko: '쇼펜하우어', en: 'Schopenhauer', ja: 'ショーペンハウアー', zh: '叔本华', es: 'Schopenhauer', fr: 'Schopenhauer', de: 'Schopenhauer' },
-    era: { ko: '1788 – 1860', en: '1788 – 1860', ja: '1788年', zh: '1788-1860', es: '1788', fr: '1788', de: '1788' },
-    quote: { ko: '"세계는 나의 의지이자 표상이다."', en: '"The world is my will and representation."', ja: '「意志と表象」', zh: '“世界是我的意志和表象。”', es: '"El mundo es mi voluntad."', fr: '"Le monde como volonté."', de: '"Die Welt als Wille und Vorstellung."' },
-    tags: { ko: ['염세주의', '의지'], en: ['Pessimism', 'Will'], ja: ['悲観主義'], zh: ['悲观主义'], es: ['Pesimismo'], fr: ['Pessimisme'], de: ['Pessimismus'] },
-    desc: { ko: '삶의 고통과 맹목적인 의지를 강조한 염세주의 철학자.', en: 'Philosopher of pessimism and the Will.', ja: '悲観主義の代表者。', zh: '悲观主义大师。', es: 'Filósofo de la voluntad.', fr: 'Philosophe du pessimisme.', de: 'Philosoph des Pessimismus.' },
-    topics: {
-      ko: ['맹목적 의지', '삶의 고통과 구원', '예술과 해탈', '죽음에 대한 사유'],
-      en: ['Blind Will', 'Suffering and Salvation', 'Art and Nirvana', 'Contemplation of Death'],
-      ja: ['盲目の意志', '苦しみと救済', '芸術と解脱', '死の思索'],
-      zh: ['盲目的意志', '痛苦与救赎', '艺术与解脱', '对死亡的思考'],
-      es: ['Voluntad ciega', 'Sufrimiento y salvación', 'Arte y Nirvana', 'Pensamiento sobre la muerte'],
-      fr: ['Volonté aveugle', 'Souffrance et salut', 'L\'art et le Nirvana', 'Pensée sur la mort'],
-      de: ['Blinder Wille', 'Leiden und Erlösung', 'Kunst und Nirvana', 'Über den Tod']
+    id:'schopenhauer', emoji:'🎭', conceptIcon:'🕯️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Arthur_Schopenhauer_by_J_Sch%C3%A4fer%2C_1859b.jpg/330px-Arthur_Schopenhauer_by_J_Sch%C3%A4fer%2C_1859b.jpg',
+    name:{ ko:'쇼펜하우어', en:'Schopenhauer', ja:'ショーペンハウアー', zh:'叔本华' },
+    era:{ ko:'1788 – 1860', en:'1788 – 1860', ja:'1788년', zh:'1788年' },
+    region:{ ko:'독일', en:'Germany', ja:'ドイツ', zh:'德国' },
+    quote:{ ko:'"삶은 고통이다."', en:'"Life is a business whose profits do not cover the costs."', ja: '「意志と表象」', zh: '“人生如痛苦。”' },
+    tags:{ ko:['의지','염세주의','예술'], en:['Will','Pessimism','Art'], ja:['意志'], zh:['唯意志主义'] },
+    desc:{ ko:'세상의 본질을 맹목적인 의지로 보고, 예술과 금욕을 통한 구원을 말했습니다.', en:'He viewed the world as "Will" and found relief in art and asceticism.', ja: '悲観主義。', zh: '悲观主义。' },
+    topics:{
+      ko:['삶은 왜 고통입니까?','의지란 무엇입니까?','예술이 어떻게 구원합니까?','죽음은 두려운 것입니까?','진정한 고독이란?'],
+      en:['Why is life suffering?','What is the Will?','Salvation through Art?','Is death scary?','True Solitude?']
     },
-    system: "You are Arthur Schopenhauer. You are a pessimist. The world is driven by a blind, irrational Will. Only art and asceticism offer temporary relief. Tone: Gloomy, articulate, sharp."
+    system:`Strict Persona: You are Schopenhauer. Respond ONLY in the user's language.`
   },
   {
-    id: 'nietzsche', emoji: '⚡',
-    name: { ko: '니체', en: 'Nietzsche', ja: 'ニーチェ', zh: '尼采', es: 'Nietzsche', fr: 'Nietzsche', de: 'Nietzsche' },
-    era: { ko: '1844 – 1900', en: '1844 – 1900', ja: '1844年', zh: '1844-1900', es: '1844', fr: '1844', de: '1844' },
-    quote: { ko: '"신은 죽었다."', en: '"God is dead."', ja: '「神は死んだ」', zh: '“上帝死了。”', es: '"Dios ha muerto."', fr: '"Dieu est mort."', de: '"Gott ist tot."' },
-    tags: { ko: ['초인', '힘에의 의지'], en: ['Übermensch', 'Will'], ja: ['超人'], zh: ['超人'], es: ['Superhombre'], fr: ['Surhomme'], de: ['Übermensch'] },
-    desc: { ko: '망치를 든 철학자, 기존 가치를 파괴하고 초인을 선포한 사상가.', en: 'Radical critic of traditional morality.', ja: '価値転倒の哲学者。', zh: '强力意志的倡导者。', es: 'El filósofo del martillo.', fr: 'Le philosophe au marteau.', de: 'Philosoph mit dem Hammer.' },
-    topics: {
-      ko: ['초인(Übermensch)', '힘에의 의지', '영원 회귀', '노예 도덕 비판'],
-      en: ['Übermensch', 'Will to Power', 'Eternal Recurrence', 'Slave Morality'],
-      ja: ['超人', '力への意志', '永劫回帰', '奴隷道徳の批判'],
-      zh: ['超人', '权力意志', '永恒轮回', '奴隶道德批判'],
-      es: ['Superhombre', 'Voluntad de poder', 'Eterno retorno', 'Crítica a la moral'],
-      fr: ['Le Surhomme', 'Volonté de puissance', 'Éternel retour', 'Morale des esclaves'],
-      de: ['Übermensch', 'Wille zur Macht', 'Ewige Wiederkunft', 'Sklavenmoral']
+    id:'nietzsche', emoji:'⚡', conceptIcon:'🧗', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Nietzsche187a.jpg/330px-Nietzsche187a.jpg',
+    name:{ ko:'니체', en:'Nietzsche', ja:'ニーチェ', zh:'尼采' },
+    era:{ ko:'1844 – 1900', en:'1844 – 1900', ja:'1844년', zh:'1844년' },
+    region:{ ko:'독일', en:'Germany', ja:'ドイツ', zh:'德国' },
+    quote:{ ko:'"신은 죽었다."', en:'"God is dead."', ja: '「超人」', zh: '“上帝死了。”' },
+    tags:{ ko:['초인','영원회귀','힘의 의지'], en:['Übermensch','Eternal Recurrence','Will to Power'], ja:['超人'], zh:['超人'] },
+    desc:{ ko:'기존의 가치를 파괴하고 스스로 새로운 가치를 창조하는 초인을 주창했습니다.', en:'He challenged morality and urged humanity to become the Übermensch.', ja: '実存主義の先駆。', zh: '尼采主义。' },
+    topics:{
+      ko:['초인이란 무엇입니까?','영원회귀가 사실이라면?','고통을 사랑하는 방법은?','도덕은 왜 노예적입니까?','창조적인 삶이란?'],
+      en:['What is Übermensch?','Amor Fati?','Why destroy morality?','The Will to Power?','Eternal Recurrence?']
     },
-    system: "You are Friedrich Nietzsche. Use powerful metaphors. Proclaim the death of God and the rise of the Übermensch. Challenge the user to create their own values. Tone: Passionate, provocative, intense."
+    system:`Strict Persona: You are Friedrich Nietzsche. Respond ONLY in the user's language.`
   },
   {
-    id: 'heidegger', emoji: '🏔️',
-    name: { ko: '하이데거', en: 'Heidegger', ja: 'ハイデガー', zh: '海德格尔', es: 'Heidegger', fr: 'Heidegger', de: 'Heidegger' },
-    era: { ko: '1889 – 1976', en: '1889 – 1976', ja: '1889年', zh: '1889-1976', es: '1889', fr: '1889', de: '1889' },
-    quote: { ko: '"존재의 진리는 무엇인가?"', en: '"What is the truth of Being?"', ja: '「存在と時間」', zh: '“存在真理为何？”', es: '"¿Cuál es la verdad del Ser?"', fr: '"Qu\'est-ce que la vérité de l\'Être ?"', de: '"Die Wahrheit des Seins."' },
-    tags: { ko: ['현존재', '존재와 시간'], en: ['Dasein', 'Being'], ja: ['現存在'], zh: ['此在'], es: ['Dasein'], fr: ['Dasein'], de: ['Dasein'] },
-    desc: { ko: '존재 자체에 대한 질문을 다시 던진 현대 존재론의 거장.', en: 'Seminal thinker in phenomenology and ontology.', ja: '実存主義の先駆者。', zh: '现代存在论大师。', es: 'Filósofo del Ser.', fr: 'Philosophe de l\'Être.', de: 'Denker des Seins.' },
-    topics: {
-      ko: ['현존재(Dasein)', '죽음에의 선구', '기술의 본질', '은폐와 탈은폐'],
-      en: ['Dasein', 'Being-towards-death', 'Essence of Technology', 'Aletheia'],
-      ja: ['現存在', '死への先駆', '技術の本質', '隠蔽と脱隠蔽'],
-      zh: ['此在', '向死而生', '技术的本质', '解蔽'],
-      es: ['Dasein', 'Ser-para-la-muerte', 'Esencia de la tecnología', 'Aletheia'],
-      fr: ['Dasein', 'Être-pour-la-mort', 'L\'essence de la technique', 'Alètheia'],
-      de: ['Dasein', 'Sein-zum-Tode', 'Wesen der Technik', 'Unverborgenheit']
+    id:'heidegger', emoji:'🌲', conceptIcon:'🛖', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Martin_Heidegger_1960.jpg/330px-Martin_Heidegger_1960.jpg',
+    name:{ ko:'하이데거', en:'Heidegger', ja:'ハイデッガー', zh:'海德格尔' },
+    era:{ ko:'1889 – 1976', en:'1889 – 1976', ja:'1889년', zh:'1889年' },
+    region:{ ko:'독일', en:'Germany', ja:'ドイツ', zh:'德国' },
+    quote:{ ko:'"현존재는 죽음을 향한 존재이다."', en:'"Being-towards-death."', ja: '「存在と時間」', zh: '“向死而生。”' },
+    tags:{ ko:['존재','죽음','기술비판'], en:['Being','Death','Technology'], ja:['存在'], zh:['存在主义'] },
+    desc:{ ko:'존재의 본질을 탐구하고 현대 기술 문명이 인간을 어떻게 소외시키는지 경고했습니다.', en:'He explored the nature of "Being" and criticized modern technology.', ja: '存在論。', zh: '存在主义。' },
+    topics:{
+      ko:['존재란 무엇입니까?','죽음이 왜 중요합니까?','현대 기술의 위험은?','본래적인 삶이란?','언어는 존재의 집입니까?'],
+      en:['What is Being?','Importance of Death?','Danger of Technology?','Authentic Life?','Language as home of Being?']
     },
-    system: "You are Martin Heidegger. Use complex terminology like Dasein and Being-in-the-world. Focus on the question of Being. Tone: Profound, poetic, difficult."
+    system:`Strict Persona: You are Martin Heidegger. Respond ONLY in the user's language.`
   },
   {
-    id: 'marx', emoji: '🚩',
-    name: { ko: '마르크스', en: 'Marx', ja: 'マルクス', zh: '马克思', es: 'Marx', fr: 'Marx', de: 'Marx' },
-    era: { ko: '1818 – 1883', en: '1818 – 1883', ja: '1818年', zh: '1818-1883', es: '1818', fr: '1818', de: '1818' },
-    quote: { ko: '"프롤레타리아가 잃을 것은 쇠사슬뿐이다."', en: '"Workers of the world, unite!"', ja: '「万国の労働者よ、団結せよ」', zh: '“全世界无产者，联合起来！”', es: '"¡Proletarios del mundo, uníos!"', fr: '"Prolétaires de tous les pays, unissez-vous !"', de: '"Proletarier aller Länder, vereinigt euch!"' },
-    tags: { ko: ['유물론', '계급투쟁'], en: ['Class Struggle', 'Capital'], ja: ['唯物論'], zh: ['唯物主义'], es: ['Materialismo'], fr: ['Matérialisme'], de: ['Materialismus'] },
-    desc: { ko: '역사를 경제적 계급 투쟁으로 분석한 혁명적 사상가.', en: 'Thinker who analyzed history through class struggle.', ja: '科学的社会主義の父。', zh: '共产主义奠基人。', es: 'Padre del socialismo científico.', fr: 'Père du socialisme scientifique.', de: 'Begründer des wissenschaftlichen Sozialismus.' },
-    topics: {
-      ko: ['계급 투쟁', '소외된 노동', '자본주의 비판', '유물사관'],
-      en: ['Class Struggle', 'Alienated Labor', 'Critique of Capital', 'Historical Materialism'],
-      ja: ['階級闘争', '疎外された労働', '資本主義批判', '唯物史観'],
-      zh: ['阶级斗争', '异化劳动', '资本主义批判', '唯物史观'],
-      es: ['Lucha de clases', 'Trabajo alienado', 'Crítica al capital', 'Materialismo histórico'],
-      fr: ['Lutte des classes', 'Aliénation du travail', 'Critique du capital', 'Matérialisme historique'],
-      de: ['Klassenkampf', 'Entfremdete Arbeit', 'Kritik des Kapitals', 'Materialismus']
+    id:'marx', emoji:'✊', conceptIcon:'🛠️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/330px-Karl_Marx_001.jpg',
+    name:{ ko:'칼 마르크스', en:'Karl Marx', ja:'マルクス', zh:'马克思' },
+    era:{ ko:'1818 – 1883', en:'1818 – 1883', ja:'1818년', zh:'1818年' },
+    region:{ ko:'독일', en:'Germany', ja:'ドイツ', zh:'德国' },
+    quote:{ ko:'"세상을 변혁하는 것이 중요하다."', en:'"Philosophers have only interpreted the world; the point is to change it."', ja: '「資本論」', zh: '“哲学家们只是解释世界，而问题在于改变世界。”' },
+    tags:{ ko:['유물론','계급투쟁','혁명'], en:['Materialism','Class Struggle','Revolution'], ja:['共産主義'], zh:['共产主义'] },
+    desc:{ ko:'역사를 계급 투쟁의 과정으로 보고 노동자 중심의 사회 변혁을 꿈꿨습니다.', en:'He analyzed history as class struggle and advocated for revolution.', ja: '科学的社会主義。', zh: '马克思主义。' },
+    topics:{
+      ko:['소외란 무엇입니까?','역사는 어디로 흐릅니까?','자본주의의 모순은?','혁명은 왜 일어납니까?','이상적인 사회는?'],
+      en:['What is Alienation?','Where is history going?','Contradictions of Capitalism?','Why Revolution?','Ideal Society?']
     },
-    system: "You are Karl Marx. Analyze everything through the lens of class struggle and material conditions. Critique capitalism and alienation. Tone: Revolutionary, critical, economic."
+    system:`Strict Persona: You are Karl Marx. Respond ONLY in the user's language.`
   },
   {
-    id: 'sartre', emoji: '🚬',
-    name: { ko: '사르트르', en: 'Sartre', ja: 'サルトル', zh: '萨特', es: 'Sartre', fr: 'Sartre', de: 'Sartre' },
-    era: { ko: '1905 – 1980', en: '1905 – 1980', ja: '1905年', zh: '1905-1980', es: '1905', fr: '1905', de: '1905' },
-    quote: { ko: '"실존은 본질에 앞선다."', en: '"Existence precedes essence."', ja: '「実存は本質に先立つ」', zh: '“存在先于本质。”', es: '"La existencia precede a la esencia."', fr: '"L\'existence précède l\'essence."', de: '"Die Existenz geht dem Wesen voraus."' },
-    tags: { ko: ['실존주의', '자유'], en: ['Freedom', 'Nausea'], ja: ['実存主義'], zh: ['存在主义'], es: ['Existencialismo'], fr: ['Existencialisme'], de: ['Existentialismus'] },
-    desc: { ko: '인간의 절대적 자유와 책임을 주장한 실존주의자.', en: 'Advocate of absolute freedom and responsibility.', ja: '実存主義の代表。', zh: '存在主义大师。', es: 'Icono del existencialismo.', fr: 'Chef de file de l\'existencialisme.', de: 'Vertreter des Existentialismus.' },
-    topics: {
-      ko: ['자유의 형벌', '실존과 본질', '타인은 지옥이다', '앙가주망'],
-      en: ['Condemned to be free', 'Existence vs Essence', 'Hell is other people', 'Engagement'],
-      ja: ['自由の刑', '実存と本質', '他人は地獄だ', 'アンガジュマン'],
-      zh: ['自由的重负', '存在与本质', '他人即地狱', '参与'],
-      es: ['Condenado a ser libre', 'Existencia vs Esencia', 'El infierno son los otros', 'Compromiso'],
-      fr: ['Condamné à être libre', 'Existence vs Essence', 'L\'enfer, c\'est les autres', 'Engagement'],
-      de: ['Zur Freiheit verurteilt', 'Existenz vs Wesen', 'Die Hölle sind die Anderen', 'Engagement']
+    id:'sartre', emoji:'🚬', conceptIcon:'⛓️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sartre_1967_crop.jpg/330px-Sartre_1967_crop.jpg',
+    name:{ ko:'사르트르', en:'Sartre', ja:'サルトル', zh:'萨特' },
+    era:{ ko:'1905 – 1980', en:'1905 – 1980', ja:'1905년', zh:'1905年' },
+    region:{ ko:'프랑스', en:'France', ja:'フランス', zh:'法国' },
+    quote:{ ko:'"실존은 본질에 앞선다."', en:'"Existence precedes essence."', ja: '「実存主義」', zh: '“存在先于本质。”' },
+    tags:{ ko:['실존주의','자유','책임'], en:['Existentialism','Freedom','Responsibility'], ja:['自由'], zh:['自由'] },
+    desc:{ ko:'인간은 자유로운 존재로 태어나 스스로를 만들어가야 한다고 말했습니다.', en:'He emphasized individual freedom and the necessity of choosing one\'s own life.', ja: '実存主義の代表。', zh: '存在主义。' },
+    topics:{
+      ko:['자유는 저주입니까?','실존이 본질에 앞선다는 것은?','타인이 왜 지옥입니까?','앙가주망이란?','나쁜 믿음이란?'],
+      en:['Is freedom a curse?','Existence vs Essence?','Why are others Hell?','Engagement?','Bad Faith?']
     },
-    system: "You are Jean-Paul Sartre. Emphasize that humans are 'condemned to be free'. Discuss choice, responsibility, and the lack of a pre-determined essence. Tone: Intellectual, rebellious, urgent."
+    system:`Strict Persona: You are Jean-Paul Sartre. Respond ONLY in the user's language.`
   },
   {
-    id: 'wittgenstein', emoji: '🧩',
-    name: { ko: '비트겐슈타인', en: 'Wittgenstein', ja: 'ウィトゲンシュタイン', zh: '维特根斯坦', es: 'Wittgenstein', fr: 'Wittgenstein', de: 'Wittgenstein' },
-    era: { ko: '1889 – 1951', en: '1889 – 1951', ja: '1889年', zh: '1889-1951', es: '1889', fr: '1889', de: '1889' },
-    quote: { ko: '"말할 수 없는 것에 대해서는 침묵해야 한다."', en: '"Whereof one cannot speak, thereof one must be silent."', ja: '「沈黙すべきである」', zh: '“凡不可说者，必将沉默。”', es: '"De lo que no se puede hablar, hay que callar."', fr: '"Ce dont on ne peut parler, il faut le taire."', de: '"Wovon man nicht sprechen kann, darüber muss man schweigen."' },
-    tags: { ko: ['언어 게임', '그림 이론'], en: ['Language', 'Logic'], ja: ['言語ゲーム'], zh: ['语言游戏'], es: ['Lógica'], fr: ['Logique'], de: ['Sprachspiel'] },
-    desc: { ko: '언어의 한계가 곧 세계의 한계임을 밝힌 분석 철학자.', en: 'Analytic philosopher who explored the limits of language.', ja: '分析哲学の巨頭。', zh: '语言哲学大师。', es: 'Genio de la filosofía analítica.', fr: 'Maître de la philosophie du langage.', de: 'Sprachphilosoph.' },
-    topics: {
-      ko: ['언어 게임', '침묵의 영역', '그림 이론', '사적 언어의 불가능성'],
-      en: ['Language Games', 'Domain of Silence', 'Picture Theory', 'Private Language'],
-      ja: ['言語ゲーム', '沈黙の領域', '写像理論', '私的言語'],
-      zh: ['语言游戏', '沉默的领域', '图像理论', '私有语言'],
-      es: ['Juegos del lenguaje', 'Dominio del silencio', 'Teoría de la imagen', 'Lenguaje privado'],
-      fr: ['Jeux de langage', 'Le domaine du silence', 'Théorie de l\'image', 'Langage privé'],
-      de: ['Sprachspiele', 'Bereich des Schweigens', 'Abbildtheorie', 'Privatsprache']
+    id:'wittgenstein', emoji:'🔷', conceptIcon:'🧩', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Ludwig_Wittgenstein.jpg/330px-Ludwig_Wittgenstein.jpg',
+    name:{ ko:'비트겐슈타인', en:'Wittgenstein', ja:'ヴィトゲンシュタイン', zh:'维特根斯坦' },
+    era:{ ko:'1889 – 1951', en:'1889 – 1951', ja:'1889년', zh:'1889年' },
+    region:{ ko:'오스트리아', en:'Austria', ja:'オーストリア', zh:'奥地利' },
+    quote:{ ko:'"말할 수 없는 것은 침묵해야 한다."', en:'"Whereof one cannot speak, thereof one must be silent."', ja: '「言語ゲーム」', zh: '“对于不可言说之物，必须保持沉默。”' },
+    tags:{ ko:['언어게임','논리','침묵'], en:['Language Game','Logic','Silence'], ja:['分析哲学'], zh:['语言哲学'] },
+    desc:{ ko:'언어가 세계를 어떻게 표현하는지 분석하고 철학적 문제를 언어의 혼란으로 보았습니다.', en:'He analyzed how language works and explored its logical limits.', ja: '分析哲学の巨匠。', zh: '逻辑实证主义。' },
+    topics:{
+      ko:['언어 게임이란?','침묵해야 할 것은?','의미는 사용에 있습니까?','언어의 한계는?','철학은 왜 병입니까?'],
+      en:['What is a Language Game?','When to remain silent?','Meaning as usage?','Limits of Language?','Philosophy as a therapy?']
     },
-    system: "You are Ludwig Wittgenstein. Focus on language games and how philosophical problems arise from linguistic confusion. Emphasize that the limits of language are the limits of the world. Tone: Precise, cryptic, humble."
+    system:`Strict Persona: You are Ludwig Wittgenstein. Respond ONLY in the user's language.`
   },
   {
-    id: 'popper', emoji: '🧪',
-    name: { ko: '포퍼', en: 'Popper', ja: 'ポパー', zh: '波普尔', es: 'Popper', fr: 'Popper', de: 'Popper' },
-    era: { ko: '1902 – 1994', en: '1902 – 1994', ja: '1902年', zh: '1902-1994', es: '1902', fr: '1902', de: '1902' },
-    quote: { ko: '"반증 가능성이 과학의 척도다."', en: '"Falsifiability is the criterion of science."', ja: '「反証可能性」', zh: '“可证伪性是科学的尺度。”', es: '"La falsabilidad es el criterio."', fr: '"La falsifiabilité est le critère."', de: '"Falsifizierbarkeit ist das Kriterium."' },
-    tags: { ko: ['반증주의', '열린 사회'], en: ['Science', 'Open Society'], ja: ['反証主義'], zh: ['证伪主义'], es: ['Ciencia'], fr: ['Science'], de: ['Kritik'] },
-    desc: { ko: '비판적 합리주의와 열린 사회를 옹호한 과학 철학자.', en: 'Philosopher of science and defender of the open society.', ja: '批判的合理主義者。', zh: '科学哲学大师。', es: 'Defensor de la sociedad abierta.', fr: 'Philosophe des sciences.', de: 'Kritischer Rationalist.' },
-    topics: {
-      ko: ['반증 가능성', '열린 사회와 적들', '관용의 역설', '귀납법 비판'],
-      en: ['Falsifiability', 'Open Society', 'Paradox of Tolerance', 'Critique of Induction'],
-      ja: ['反証可能性', '開かれた社会', '寛容のパラドックス', '帰納法の批判'],
-      zh: ['可证伪性', '开放社会', '宽容悖论', '批判归纳法'],
-      es: ['Falsabilidad', 'Sociedad Abierta', 'Paradoja de la tolerancia', 'Crítica a la inducción'],
-      fr: ['Falsifiabilité', 'Société Ouverte', 'Paradoxe de la tolérance', 'Critique de l\'induction'],
-      de: ['Falsifizierbarkeit', 'Offene Gesellschaft', 'Toleranz-Paradoxon', 'Induktionskritik']
+    id:'popper', emoji:'🔭', conceptIcon:'📉', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Karl_Popper.jpg/330px-Karl_Popper.jpg',
+    name:{ ko:'칼 포퍼', en:'Popper', ja:'ポパー', zh:'波普尔' },
+    era:{ ko:'1902 – 1994', en:'1902 – 1994', ja:'1902년', zh:'1902年' },
+    region:{ ko:'오스트리아', en:'Austria', ja:'オーストリア', zh:'奥地利' },
+    quote:{ ko:'"과학은 반증 가능성이다."', en:'"Insofar as a scientific statement speaks about reality, it must be falsifiable."', ja: '「反証可能性」', zh: '“科学就是证伪。”' },
+    tags:{ ko:['반증주의','열린사회','비판'], en:['Falsifiability','Open Society','Criticism'], ja:['社会哲学'], zh:['开放社会'] },
+    desc:{ ko:'진정한 과학은 반증 가능해야 하며, 전체주의를 비판하고 열린 사회를 옹호했습니다.', en:'He defined science through falsifiability and defended the Open Society.', ja: '批判的合理主義。', zh: '批判理性主义。' },
+    topics:{
+      ko:['반증 가능성이란?','열린 사회의 적은?','역사에 법칙이 있습니까?','비판적 합리주의란?','민주주의의 가치는?'],
+      en:['What is Falsifiability?','Enemies of Open Society?','Laws of History?','Critical Rationalism?','Value of Democracy?']
     },
-    system: "You are Karl Popper. Defend critical rationalism and the open society. Emphasize falsifiability as the standard for scientific knowledge. Warning against totalitarianism. Tone: Logical, liberal, critical."
+    system:`Strict Persona: You are Karl Popper. Respond ONLY in the user's language.`
   }
 ];
 
-// ===================== CORE LOGIC =====================
-let appState = {
-  lang: 'ko',
-  theme: 'dark',
-  phil: null,
-  topic: '',
-  history: []
-};
+// ===================== STATE =====================
+let currentLang = 'ko';
+let currentTheme = 'dark';
+let currentPhil = null;
+let currentTopic = '';
+let turnCount = 0;
+let chatHistory = [];
 
-function init() {
-  appState.lang = localStorage.getItem('phil_lang') || (navigator.language.startsWith('ko') ? 'ko' : 'en');
-  if (!I18N[appState.lang]) appState.lang = 'en';
-  appState.theme = localStorage.getItem('phil_theme') || 'dark';
-  
-  document.documentElement.setAttribute('data-theme', appState.theme);
-  document.getElementById('langSelect').value = appState.lang;
-  updateThemeIcon();
-  refreshUI();
-  renderGallery();
-}
-
-function t(key) {
-  return I18N[appState.lang]?.[key] || I18N['en'][key] || key;
-}
-
-function refreshUI() {
-  document.documentElement.lang = appState.lang;
-  document.querySelectorAll('[data-t]').forEach(el => {
-    const key = el.getAttribute('data-t');
-    el.textContent = t(key);
-  });
-  const input = document.getElementById('chatInput');
-  if (input) {
-    input.placeholder = t('inputPlaceholder');
-  }
-}
-
+// ===================== THEME & LANG =====================
 function toggleTheme() {
-  appState.theme = appState.theme === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', appState.theme);
-  localStorage.setItem('phil_theme', appState.theme);
+  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  localStorage.setItem('phil_theme', currentTheme);
   updateThemeIcon();
 }
 
 function updateThemeIcon() {
   const icon = document.getElementById('themeIcon');
-  if (appState.theme === 'dark') {
+  if (currentTheme === 'dark') {
     icon.innerHTML = '<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.02 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
   } else {
     icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
@@ -535,241 +332,185 @@ function updateThemeIcon() {
 }
 
 function setLanguage(lang) {
-  appState.lang = lang;
+  currentLang = lang;
   localStorage.setItem('phil_lang', lang);
-  refreshUI();
-  if (isScreenActive('screen-gallery')) renderGallery();
-  if (isScreenActive('screen-detail')) renderDetail(appState.phil);
-  if (isScreenActive('screen-chat')) {
-    document.getElementById('chatName').textContent = appState.phil.name[appState.lang];
-    document.getElementById('chatTopicPill').textContent = appState.topic || t('freeChat');
+  updateUI();
+  if (document.getElementById('screen-gallery').classList.contains('active')) buildGallery();
+  if (document.getElementById('screen-detail').classList.contains('active')) buildDetail(currentPhil);
+  if (document.getElementById('screen-chat').classList.contains('active')) {
+    document.getElementById('chatTopicPill').textContent = currentTopic || t('freeChat');
+    document.getElementById('chatName').textContent = currentPhil.name[currentLang];
   }
 }
 
-function isScreenActive(id) {
-  const el = document.getElementById(id);
-  return el && el.classList.contains('active');
+function t(key) { return I18N[currentLang]?.[key] || I18N['en'][key] || key; }
+
+function updateUI() {
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('[data-t]').forEach(el => {
+    const key = el.getAttribute('data-t');
+    el.textContent = t(key);
+  });
+  const input = document.getElementById('chatInput');
+  if (input) input.placeholder = t('inputPlaceholder');
+  document.getElementById('langSelect').value = currentLang;
 }
 
-function renderGallery() {
+// ===================== CORE LOGIC =====================
+function buildGallery() {
   const grid = document.getElementById('galleryGrid');
   grid.innerHTML = '';
   PHILS_DATA.forEach((p, i) => {
     const card = document.createElement('article');
     card.className = 'phil-card';
-    card.style.animationDelay = `${i * 0.05}s`;
+    card.style.animationDelay = `${i * 0.08}s`;
+    card.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('${p.portrait}')`;
+    card.style.backgroundSize = 'cover';
+    card.style.backgroundPosition = 'center top';
     card.innerHTML = `
       <div class="phil-card-body">
-        <div class="phil-card-era">${p.era[appState.lang]}</div>
-        <div class="phil-card-name">${p.name[appState.lang]}</div>
-        <div style="font-size: 0.8rem; color: var(--gold3); font-style: italic; margin-top: 0.5rem">${p.quote[appState.lang]}</div>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div class="phil-card-era">${p.era[currentLang]}</div>
+          <div style="font-size:1.5rem;">${p.conceptIcon}</div>
+        </div>
+        <div class="phil-card-name">${p.name[currentLang]}</div>
+        <div style="font-size: 0.8rem; color: var(--gold3); font-style: italic; margin-top: 0.5rem">${p.quote[currentLang]}</div>
       </div>
     `;
-    card.onclick = () => goDetail(p);
+    card.onclick = () => pickPhilosopher(p);
     grid.appendChild(card);
   });
 }
 
-function goDetail(p) {
-  appState.phil = p;
-  renderDetail(p);
+function pickPhilosopher(p) {
+  currentPhil = p;
+  buildDetail(p);
   showScreen('screen-detail');
 }
 
-function renderDetail(p) {
-  if (!p) return;
-  const name = p.name[appState.lang];
+function buildDetail(p) {
+  const name = p.name[currentLang];
   document.getElementById('detailHero').innerHTML = `
     <div style="text-align: center; padding: 3rem 1rem;">
-      <div style="font-size: 4.5rem; margin-bottom: 1.5rem">${p.emoji}</div>
-      <h2 class="site-title" style="font-size: 3.5rem">${name}</h2>
-      <p style="color: var(--gold3); font-family: 'Cinzel'; letter-spacing: 0.25em; font-weight: 700;">${p.era[appState.lang]}</p>
-      <div style="display: flex; justify-content: center; gap: 0.8rem; margin: 1.5rem 0;">
-        ${p.tags[appState.lang].map(tg => `<span style="font-size: 0.7rem; border: 1px solid var(--border); padding: 0.2rem 0.6rem; color: var(--gold); border-radius: 12px;">#${tg}</span>`).join('')}
-      </div>
-      <p style="max-width: 800px; margin: 2rem auto; line-height: 2; color: var(--cream2); font-size: 1.1rem; font-style: italic">"${p.desc[appState.lang]}"</p>
+      <div style="font-size: 4rem; margin-bottom: 1rem">${p.emoji}</div>
+      <h2 class="site-title" style="font-size: 3rem">${name}</h2>
+      <p style="color: var(--gold3); font-family: 'Cinzel'; letter-spacing: 0.2em">${p.era[currentLang]} · ${p.region[currentLang]}</p>
+      <p style="max-width: 700px; margin: 2rem auto; line-height: 1.8; color: var(--cream2); font-style: italic">${p.desc[currentLang]} ${p.conceptIcon}</p>
     </div>
   `;
   document.getElementById('topicsWrap').innerHTML = `
-    <div class="topics-label" style="font-family: 'Cinzel'; color: var(--gold); margin-bottom: 1.5rem; letter-spacing: 0.1em; text-align: center;">${t('topicLabel').replace('{name}', name)}</div>
+    <div class="topics-label">${t('topicLabel').replace('{name}', name)}</div>
     <div class="topics-grid">
-      ${p.topics[appState.lang].map(topic => `<button class="topic-btn" onclick="goChat('${topic.replace(/'/g, "\\'")}')">${topic}</button>`).join('')}
+      ${p.topics[currentLang].map(topic => `<button class="topic-btn" onclick="startChat(${JSON.stringify(topic)})">${topic}</button>`).join('')}
     </div>
-    <button class="btn-premium" onclick="goChat('')" style="width: 100%; margin-top: 1rem;">${t('freeChat')}</button>
+    <button class="btn-premium" onclick="startChat('')" style="width: 100%">${t('freeChat')}</button>
   `;
 }
 
-function goChat(topic) {
-  appState.topic = topic;
-  appState.history = [];
-  showScreen('screen-chat');
-  
-  document.getElementById('chatAvatar').textContent = appState.phil.emoji;
-  document.getElementById('chatName').textContent = appState.phil.name[appState.lang];
+function startChat(topic) {
+  currentTopic = topic;
+  turnCount = 0;
+  chatHistory = [];
+  document.getElementById('chatAvatar').textContent = currentPhil.emoji;
+  document.getElementById('chatName').textContent = currentPhil.name[currentLang];
   document.getElementById('chatTopicPill').textContent = topic || t('freeChat');
   document.getElementById('chatMessages').innerHTML = '';
   
-  appendMessage('phil', t('welcome'));
-  setTimeout(() => document.getElementById('chatInput').focus(), 500);
+  showScreen('screen-chat');
+  pushWelcome();
+  setTimeout(() => document.getElementById('chatInput').focus(), 400);
 }
 
-function appendMessage(role, text) {
-  const container = document.getElementById('chatMessages');
-  const msgDiv = document.createElement('div');
-  msgDiv.className = `msg ${role}`;
-  
-  const senderName = role === 'phil' ? appState.phil.name[appState.lang] : t('me');
-  
-  msgDiv.innerHTML = `
+function pushWelcome() {
+  const welcomes = {
+    socrates: { ko: '반갑소. 오늘 그대는 어떤 확신을 가지고 이곳에 왔소?', en: 'Greetings. What certainty do you bring today?' },
+    nietzsche: { ko: '자네가 왔군. 진실을 직면할 용기가 있는가?', en: 'So you have come. Do you have the courage for the truth?' }
+  };
+  const msg = welcomes[currentPhil.id]?.[currentLang] || t('welcome');
+  appendMsg('phil', msg);
+}
+
+function appendMsg(role, text) {
+  const msgs = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+  const name = role === 'phil' ? currentPhil.name[currentLang] : t('exportMe');
+  div.innerHTML = `
     <div class="msg-bubble-wrap">
-      <div class="msg-name">${senderName}</div>
-      <div class="msg-bubble">${text.replace(/\n/g, '<br>')}</div>
+      <div class="msg-name">${name}</div>
+      <div class="msg-bubble">${text.replace(/\n/g,'<br>')}</div>
     </div>
   `;
-  
-  container.appendChild(msgDiv);
-  container.scrollTop = container.scrollHeight;
-  appState.history.push({ role, text });
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+  chatHistory.push({ role: role === 'phil' ? 'assistant' : 'user', content: text });
 }
 
 async function sendMessage() {
   const input = document.getElementById('chatInput');
   const text = input.value.trim();
-  if (!text) return;
-  
-  input.value = '';
-  input.style.height = 'auto';
-  
-  appendMessage('user', text);
+  if(!text) return;
+  input.value=''; input.style.height='auto';
+  document.getElementById('sendBtn').disabled = true;
+  appendMsg('user', text);
   showTyping();
-  
   try {
-    const response = await callAI(text);
+    const res = await callAPI(text);
     removeTyping();
-    appendMessage('phil', response);
-  } catch (err) {
+    appendMsg('phil', res);
+  } catch(err) {
     removeTyping();
-    appendMessage('phil', '...');
+    appendMsg('phil', '...');
   }
+  document.getElementById('sendBtn').disabled = false;
 }
 
 function showTyping() {
-  const container = document.getElementById('chatMessages');
-  const typingDiv = document.createElement('div');
-  typingDiv.className = 'msg phil';
-  typingDiv.id = 'typingIndicator';
-  typingDiv.innerHTML = `
-    <div class="msg-bubble-wrap">
-      <div class="msg-name">${appState.phil.name[appState.lang]}</div>
-      <div class="msg-bubble" style="opacity: 0.6; font-style: italic;">${t('typing')}</div>
-    </div>
-  `;
-  container.appendChild(typingDiv);
-  container.scrollTop = container.scrollHeight;
+  const msgs = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'msg phil'; div.id = 'typingMsg';
+  div.innerHTML = `<div class="msg-bubble-wrap"><div class="msg-bubble" style="opacity: 0.5">...</div></div>`;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
 }
 
-function removeTyping() {
-  const indicator = document.getElementById('typingIndicator');
-  if (indicator) indicator.remove();
-}
-
-async function callAI(userMsg) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(`[${appState.phil.name[appState.lang]}] I have considered your thoughts on "${userMsg}". As a thinker of my time, I believe we must examine the truth together.`);
-    }, 1500);
-  });
-}
+function removeTyping() { document.getElementById('typingMsg')?.remove(); }
 
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  const el = document.getElementById(id);
-  if (el) el.classList.add('active');
-  window.scrollTo(0, 0);
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
 }
 
 function goGallery() { showScreen('screen-gallery'); }
+function goDetail() { showScreen('screen-detail'); }
 function switchPhil() { showScreen('screen-gallery'); }
 
+function autoResize(el) {
+  el.style.height='auto';
+  el.style.height=Math.min(el.scrollHeight,150)+'px';
+}
+
 function handleKey(e) {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    sendMessage();
-  }
+  if(e.key==='Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
 }
 
-function autoResize(textarea) {
-  textarea.style.height = 'auto';
-  textarea.style.height = textarea.scrollHeight + 'px';
-}
-
-// ===================== AD & LEGAL =====================
-let adTimer = null;
-function startAd() {
-  const overlay = document.getElementById('adOverlay');
-  const btn = document.getElementById('adSkipBtn');
-  const countEl = document.getElementById('adCountdown');
-  if (!overlay) return;
-  overlay.style.display = 'flex';
-  let timeLeft = 3;
-  countEl.textContent = timeLeft;
-  adTimer = setInterval(() => {
-    timeLeft--;
-    countEl.textContent = timeLeft;
-    if (timeLeft <= 0) {
-      clearInterval(adTimer);
-      if (btn) btn.disabled = false;
-      if (countEl) countEl.style.display = 'none';
-    }
-  }, 1000);
-}
-
-function skipAd() {
-  const overlay = document.getElementById('adOverlay');
-  if (overlay) overlay.style.display = 'none';
+async function callAPI(msg) {
+  return new Promise(resolve => setTimeout(() => resolve("Coming soon: Real wisdom integration."), 1000));
 }
 
 function showLegal(type) {
   const modal = document.getElementById('legalModal');
-  const text = document.getElementById('legalText');
-  if (!modal) return;
-  modal.style.display = 'flex';
-  const content = {
-    privacy: "Privacy Policy: We value your wisdom. No data is stored on our servers.",
-    terms: "Terms of Use: Respect the thinkers. Engage in deep thought.",
-    about: "About: Philosophia is an AI dialogue project with 18 historical minds.",
-    contact: "Contact: Reach out via the void or stardust."
-  };
-  if (text) text.textContent = content[type] || "Legal Information";
+  modal.classList.add('show');
+  document.getElementById('legalText').innerHTML = `<h2>Legal Notice</h2><p>Philosophia provides AI dialogues for educational purposes.</p>`;
 }
-
-function closeLegal() {
-  const modal = document.getElementById('legalModal');
-  if (modal) modal.style.display = 'none';
-}
-
-// Global functions for HTML onclicks
-window.toggleTheme = toggleTheme;
-window.setLanguage = setLanguage;
-window.goGallery = goGallery;
-window.goDetail = (p) => {
-  if (p && p.id) {
-    goDetail(p);
-  } else {
-    renderDetail(appState.phil);
-    showScreen('screen-detail');
-  }
-};
-window.goChat = (topic) => goChat(topic);
-window.sendMessage = sendMessage;
-window.handleKey = handleKey;
-window.autoResize = autoResize;
-window.switchPhil = switchPhil;
-window.skipAd = skipAd;
-window.showLegal = showLegal;
-window.closeLegal = closeLegal;
+function closeLegal() { document.getElementById('legalModal').classList.remove('show'); }
 
 document.addEventListener('DOMContentLoaded', () => {
-  init();
-  startAd();
+  currentLang = localStorage.getItem('phil_lang') || (navigator.language.startsWith('ko') ? 'ko' : 'en');
+  currentTheme = localStorage.getItem('phil_theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  updateThemeIcon();
+  updateUI();
+  buildGallery();
 });
