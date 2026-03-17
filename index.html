@@ -3,110 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Philosophia — AI Dialogues with History's Greatest Thinkers</title>
+<title>철학인의 방 — 위대한 사상가들과의 AI 대화</title>
 <link rel="canonical" href="https://egogogogogogo.github.io/philosophy/">
-<meta name="description" content="Engage in deep, AI-powered conversations with 18 historical philosophers. Available in multiple languages.">
-<meta name="keywords" content="philosophy, AI chatbot, Socrates, Nietzsche, Confucius, wisdom, dark mode">
+<meta name="description" content="소크라테스, 니체, 공자 등 18인의 위대한 철학자들과 깊이 있는 대화를 나누어보세요. AI가 재현한 철학인의 사상과 말투를 경험할 수 있습니다.">
+<meta name="keywords" content="철학, AI 챗봇, 소크라테스, 니체, 공자, 지혜, 명언, 인문학, 대화형 AI">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+KR:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<!-- Google AdSense Placeholder -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
 <body>
 
 <!-- ===================== UTILITY BAR ===================== -->
-<div class="utility-bar">
-  <select class="lang-select" id="langSelect" onchange="setLanguage(this.value)" aria-label="Language">
+<nav class="utility-bar" aria-label="Utility Navigation">
+  <select class="lang-select" id="langSelect" onchange="setLanguage(this.value)" aria-label="언어 선택 / Select Language">
     <option value="ko">한국어</option>
     <option value="en">English</option>
-    <option value="ja">日本語</option>
-    <option value="zh">中文</option>
-    <option value="es">Español</option>
-    <option value="fr">Français</option>
-    <option value="de">Deutsch</option>
   </select>
-  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme">
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="테마 전환 / Toggle Theme">
     <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor"></svg>
   </button>
-</div>
+</nav>
 
 <!-- ===================== AD OVERLAY ===================== -->
-<div class="ad-overlay" id="adOverlay" role="dialog">
+<div class="ad-overlay" id="adOverlay" role="dialog" aria-modal="true" aria-labelledby="adTitle">
   <div class="ad-modal">
     <div class="ad-modal-top">
-      <span class="ad-modal-label" data-t="adLabel">Advertisement</span>
+      <span class="ad-modal-label" id="adTitle" data-t="adLabel">Advertisement</span>
       <span class="ad-modal-countdown" id="adCountdown">5</span>
     </div>
-    <div class="ad-modal-content">AD Area · 300 × 250</div>
+    <div class="ad-modal-content">
+      <!-- Google AdSense Unit Placeholder -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <p style="font-size: 0.8rem; color: var(--cream3);">광고 후 대화가 시작됩니다.</p>
+    </div>
     <button class="btn-premium" id="adSkipBtn" disabled onclick="skipAd()" data-t="skipAd" style="width: 100%">Continue</button>
   </div>
 </div>
 
 <!-- ===================== LEGAL MODAL ===================== -->
-<div class="legal-modal" id="legalModal">
+<div class="legal-modal" id="legalModal" role="dialog" aria-modal="true">
   <div class="legal-content">
-    <button class="legal-close" onclick="closeLegal()">&times;</button>
+    <button class="legal-close" onclick="closeLegal()" aria-label="Close">&times;</button>
     <div id="legalText" class="legal-text"></div>
   </div>
 </div>
 
-<!-- ===================== SCREEN: GALLERY ===================== -->
-<div class="screen active" id="screen-gallery">
+<!-- ===================== SCREEN 1: GALLERY ===================== -->
+<main class="screen active" id="screen-gallery">
   <header class="site-header">
-    <div class="header-ornament">Philosophia · 哲學 · فلسفه</div>
+    <div class="header-ornament">Philosophia · 哲學 · Wisdom</div>
     <h1 class="site-title" data-t="siteTitle">철학인의 방</h1>
     <p class="site-tagline" data-t="siteTagline">시대를 초월한 사상가들과의 대화</p>
   </header>
 
   <section class="gallery-section">
-    <p class="gallery-heading" data-t="galleryHeading" style="text-align:center; margin-bottom: 4rem; font-style: italic; color: var(--cream3);">Choose a philosopher to begin your journey</p>
-    <main class="gallery-grid" id="galleryGrid"></main>
+    <h2 class="gallery-heading" data-t="galleryHeading" style="text-align:center; margin-bottom: 4rem; font-style: italic; color: var(--cream3); font-weight: 400;">대화를 나누고 싶은 철학인을 선택하세요</h2>
+    <div class="gallery-grid" id="galleryGrid"></div>
   </section>
 
   <footer class="site-footer">
-    <p data-t="footerText">© 2026 Philosophia · AI-Powered Dialogues with Great Thinkers</p>
-    <div class="footer-links">
+    <p data-t="footerText">© 2026 Philosophia · 위대한 철학인들과 AI로 대화하는 공간</p>
+    <nav class="footer-links" aria-label="Legal Links">
       <a onclick="showLegal('privacy')" data-t="privacy">Privacy</a>
       <a onclick="showLegal('terms')" data-t="terms">Terms</a>
       <a onclick="showLegal('about')" data-t="about">About</a>
       <a onclick="showLegal('contact')" data-t="contact">Contact</a>
-    </div>
+    </nav>
   </footer>
-</div>
+</main>
 
-<!-- ===================== SCREEN: DETAIL ===================== -->
-<div class="screen" id="screen-detail">
+<!-- ===================== SCREEN 2: DETAIL ===================== -->
+<article class="screen" id="screen-detail">
   <div style="padding: 2rem clamp(1.5rem, 6vw, 5rem);">
-    <button class="btn-premium" onclick="goGallery()" data-t="backToGallery">← List</button>
+    <button class="btn-premium" onclick="goGallery()" data-t="backToGallery">← 철학인 목록</button>
   </div>
   <div id="detailHero"></div>
-  <div id="topicsWrap" style="padding: 0 clamp(1.5rem, 10vw, 8rem) 6rem;"></div>
-</div>
+  <section id="topicsWrap" style="padding: 0 clamp(1.5rem, 10vw, 8rem) 6rem;"></section>
+</article>
 
-<!-- ===================== SCREEN: CHAT ===================== -->
-<div class="screen" id="screen-chat" style="height: 100vh; overflow: hidden;">
-  <div class="chat-topbar">
+<!-- ===================== SCREEN 3: CHAT ===================== -->
+<section class="screen" id="screen-chat">
+  <header class="chat-topbar">
     <div id="chatAvatar" style="font-size: 2rem; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: var(--bg2); border: 1px solid var(--gold); border-radius: 50%;"></div>
     <div style="flex: 1;">
-      <div class="chat-phil-name" id="chatName" style="font-family: 'Cinzel'; font-weight: 700; color: #fff;"></div>
-      <div class="chat-topic-pill" id="chatTopicPill" style="font-size: 0.8rem; color: var(--gold3); font-style: italic; margin-top: 0.2rem;"></div>
+      <h2 class="chat-phil-name" id="chatName" style="font-family: 'Cinzel'; font-weight: 700; color: #fff; font-size: 1.2rem; margin: 0;"></h2>
+      <div class="chat-topic-pill" id="chatTopicPill" style="font-size: 0.8rem; color: var(--gold2); font-style: italic; margin-top: 0.2rem;"></div>
     </div>
-    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end;">
-      <button class="btn-premium" onclick="goDetail()" data-t="changeTopic" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">주제 변경</button>
+    <nav style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end;" aria-label="Chat Controls">
       <button class="btn-premium" onclick="switchPhil()" data-t="changePhil" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">철학인 변경</button>
+      <button class="btn-premium" onclick="goDetail()" data-t="changeTopic" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">대화주제 변경</button>
       <button class="btn-premium" onclick="saveChatLog()" data-t="saveChat" style="padding: 0.4rem 0.8rem; font-size: 0.65rem;">대화 저장</button>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
 
-  <div style="padding: 1.5rem 2.5rem; background: var(--bg2); border-top: 1px solid var(--border);">
+  <footer style="padding: 1.5rem 2.5rem; background: var(--bg2); border-top: 1px solid var(--border);">
     <div style="display: flex; gap: 1rem; align-items: flex-end; max-width: 1000px; margin: 0 auto;">
-      <textarea class="chat-input" id="chatInput" rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
-      <button class="btn-premium" id="sendBtn" onclick="sendMessage()" style="height: 50px; width: 60px; padding: 0;">↑</button>
+      <label for="chatInput" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;">메시지 입력</label>
+      <textarea class="chat-input" id="chatInput" rows="1" onkeydown="handleKey(event)" oninput="autoResize(this)" style="background: var(--bg3); border: 1px solid var(--border); color: var(--cream); padding: 1rem; border-radius: 4px; flex: 1; resize: none; font-family: inherit; font-size: 1rem; outline: none; transition: border-color 0.3s;" placeholder="심오한 생각을 나누어보세요…"></textarea>
+      <button class="btn-premium" id="sendBtn" onclick="sendMessage()" style="height: 50px; width: 60px; padding: 0;" aria-label="Send">↑</button>
     </div>
     <p id="inputHint" data-t="inputHint" style="font-size: 0.65rem; color: var(--cream3); text-align: right; margin-top: 0.6rem; letter-spacing: 0.05em;"></p>
-  </div>
-</div>
+  </footer>
+</section>
 
 <script src="main.js"></script>
 </body>
