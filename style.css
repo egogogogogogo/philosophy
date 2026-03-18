@@ -121,19 +121,22 @@ body::after{
   box-shadow: 0 8px 25px var(--glow);
 }
 
-/* Group 2: Chat Actions (Bronze/Silver Variant) */
+/* Group 2: Chat Actions (Antique White Fill) */
 .chat-topbar .btn-premium {
-  border: 1px solid rgba(180, 140, 100, 0.3); /* Bronze-like Border */
-  color: #b48c64; /* Bronze Color */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  margin: 0; /* Clear existing margins */
+  background: #FAEBD7 !important; /* AntiqueWhite Fill */
+  border: 1px solid var(--gold);
+  color: #1a1a1a; /* Dark text for contrast */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin: 0;
+  opacity: 0.9;
 }
 
 .chat-topbar .btn-premium:hover {
-  border-color: #d4a843;
-  color: var(--gold2);
-  background: rgba(180, 140, 100, 0.1);
+  background: #fff !important;
+  color: #000;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(250, 235, 215, 0.4);
+  opacity: 1;
 }
 
 .theme-toggle svg { width: 14px; height: 14px; fill: currentColor; }
