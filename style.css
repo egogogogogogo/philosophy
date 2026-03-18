@@ -83,22 +83,35 @@ body::after{
 /* ===================== UTILITY BAR ===================== */
 .utility-bar {
   position: fixed; top: 1.5rem; right: 1.5rem;
-  display: flex; align-items: center; gap: 0.8rem;
-  z-index: 2000; /* Higher than chat-topbar */
+  display: flex; align-items: center; gap: 0.6rem; /* Consistent Gap */
+  z-index: 2000;
 }
 
-.theme-toggle, .lang-select {
+/* Shared Top Action Button Style */
+.theme-toggle, .lang-select, .chat-topbar .btn-premium {
+  height: 34px; /* Unified Height */
   background: var(--btn-glass);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--border);
-  color: var(--gold);
-  padding: 0.6rem 1rem;
+  padding: 0 0.8rem;
   border-radius: 2px;
   cursor: pointer;
   font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
+  font-size: 0.7rem; /* Unified Font Size */
+  font-weight: 700;
+  letter-spacing: 0.05em;
   transition: var(--transition);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Group 1: Utility (Gold) */
+.theme-toggle, .lang-select {
+  border: 1px solid var(--border);
+  color: var(--gold);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .theme-toggle:hover, .lang-select:hover {
@@ -108,7 +121,22 @@ body::after{
   box-shadow: 0 8px 25px var(--glow);
 }
 
-.theme-toggle svg { width: 16px; height: 16px; fill: currentColor; }
+/* Group 2: Chat Actions (Bronze/Silver Variant) */
+.chat-topbar .btn-premium {
+  border: 1px solid rgba(180, 140, 100, 0.3); /* Bronze-like Border */
+  color: #b48c64; /* Bronze Color */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 0; /* Clear existing margins */
+}
+
+.chat-topbar .btn-premium:hover {
+  border-color: #d4a843;
+  color: var(--gold2);
+  background: rgba(180, 140, 100, 0.1);
+  transform: translateY(-2px);
+}
+
+.theme-toggle svg { width: 14px; height: 14px; fill: currentColor; }
 
 /* ===================== BUTTONS (PREMIUM REDESIGN) ===================== */
 .btn-premium {
