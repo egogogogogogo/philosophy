@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "philosophy-87080134"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
