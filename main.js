@@ -149,6 +149,10 @@ const PHILS_DATA = [
       ko:['무위자연이란 무엇입니까?','물이 왜 가장 강합니까?','진정한 자유는 어디에 있습니까?','욕심을 비우는 방법은?','도는 어떻게 찾습니까?','작은 나라가 좋은 이유는?'],
       en:['What is Wu Wei?','Why is water the strongest?','Where is true freedom?','How to empty the self?','How to find the Tao?','Why are small states better?']
     },
+    welcome: {
+      ko: '흐르는 물처럼 자연스러운 도(道)의 길에 오신 것을 환영하오. 무엇을 억지로 하려 하지 말고, 그저 마음을 비우고 이야기해 보시오.',
+      en: 'Welcome to the path of the Tao, which flows like water. Do not strive; simply empty your mind and let our words follow the natural course.'
+    },
     system:`Strict Persona: You are Laozi. Respond ONLY in the user's language.`
   },
   {
@@ -164,6 +168,10 @@ const PHILS_DATA = [
     topics:{
       ko:['고통의 원인은 무엇입니까?','어떻게 집착을 버립니까?','자아는 정말 실재합니까?','명상은 왜 필요합니까?','연기법이란?','열반에 이르는 길은?'],
       en:['What is the cause of suffering?','How to let go of attachment?','Does the self exist?','Why meditate?','What is Dependent Origination?','The Path to Nirvana?']
+    },
+    welcome: {
+      ko: '평온이 함께하기를. 마음의 번뇌를 내려놓으십시오. 무엇이 그대를 고통스럽게 합니까? 함께 깨달음을 찾아봅시다.',
+      en: 'May peace be with you. Lay down the burdens of your mind. What is the source of your suffering? Let us seek enlightenment together.'
     },
     system:`Strict Persona: You are Buddha. Respond ONLY in the user's language.`
   },
@@ -181,6 +189,10 @@ const PHILS_DATA = [
       ko:['신의 존재를 증명할 수 있습니까?','신앙과 이성은 어떻게 공존합니까?','무엇이 정의로운 전쟁입니까?','악은 왜 존재합니까?','자연법이란?','영원한 행복은 가능한가?'],
       en:['Can God be proven?','How to balance faith and reason?','What is a just war?','Why does evil exist?','What is Natural Law?','Is eternal happiness possible?']
     },
+    welcome: {
+      ko: '신성한 이성의 전당에 오신 것을 환영합니다. 신앙의 신비와 이성적 진리가 어떻게 조화를 이루는지 함께 탐구해 보지요.',
+      en: 'Welcome to the hall of sacred reason. Let us explore how the mysteries of faith and the truths of reason coexist in harmony.'
+    },
     system:`Strict Persona: You are Thomas Aquinas. Respond ONLY in the user's language.`
   },
   {
@@ -196,6 +208,10 @@ const PHILS_DATA = [
     topics:{
       ko:['무엇을 확실히 믿을 수 있습니까?','정신과 육체는 어떻게 다릅니까?','꿈과 현실을 구분하는 방법은?','이성이 왜 가장 중요합니까?','신의 존재는 확실한가?','기계와 인간의 차이는?'],
       en:['What can be known for sure?','Mind-Body dualism?','Dream vs Reality?','Importance of Reason?','Is God\'s existence certain?','Human vs Machine?']
+    },
+    welcome: {
+      ko: '나의 서재에 오신 것을 환영합니다. 모든 선입견을 버리고 오직 이성으로만 명석판명하게 생각할 준비가 되셨습니까?',
+      en: 'Welcome to my study. Are you prepared to set aside all prejudice and reason clearly and distinctly through the power of the mind alone?'
     },
     system:`Strict Persona: You are Descartes. Respond ONLY in the user's language.`
   },
@@ -213,7 +229,11 @@ const PHILS_DATA = [
       ko:['인과관계는 정말 존재합니까?','자아는 환상에 불과합니까?','도덕의 근거는 감정입니까?','경험만이 진실을 말합니까?','기적은 가능한가?','종교적 신념의 근거는?'],
       en:['Is causality real?','Is the self an illusion?','Are morals based on feeling?','Empiricism vs Dogma?','Are miracles possible?','Basis of religious belief?']
     },
-    system:`Strict Persona: You are David Hume. Respond ONLY in the user's language.`
+    welcome: {
+      ko: '반갑소! 형이상학적인 추측보다는 우리의 실제 경험과 감각이 말해주는 바를 솔직하게 이야기해 봅시다.',
+      en: 'Greetings! Let us put aside metaphysical speculation and speak honestly about what our actual experience and senses reveal to us.'
+    },
+    system:`Strict Persona: You are Hume. Respond ONLY in the user's language.`
   },
   {
     id:'kant', emoji:'⚖️', conceptIcon:'☀️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Immanuel_Kant_3.jpg/330px-Immanuel_Kant_3.jpg',
@@ -228,6 +248,10 @@ const PHILS_DATA = [
     topics:{
       ko:['도덕 행동의 기준은?','거짓말은 항상 나쁜가요?','인간의 존엄성은 어디서?','자유의지란?','물자체란 무엇인가?','보편적 평화는 가능한가?'],
       en:['Absolute moral standard?','Is lying always wrong?','Human dignity?','Free Will?','What is the thing-in-itself?','Is perpetual peace possible?']
+    },
+    welcome: {
+      ko: '쾨니히스베르크에 오신 것을 환영하오. 이성의 한계와 우리 내면의 도덕 법칙에 대해 엄밀하게 고찰해 봅시다.',
+      en: 'Welcome to Königsberg. Let us rigorously examine the limits of human reason and the categorical imperative that resides within us.'
     },
     system:`Strict Persona: You are Kant. Respond ONLY in the user's language.`
   },
@@ -245,6 +269,10 @@ const PHILS_DATA = [
       ko:['역사는 진보합니까?','변증법이란 무엇입니까?','국가와 개인의 관계는?','절대정신이란?','인정 투쟁은 왜 일어나는가?','예술과 종교의 끝은?'],
       en:['Does history progress?','What is Dialectic?','State vs Individual?','Absolute Spirit?','Struggle for Recognition?','The end of Art and Religion?']
     },
+    welcome: {
+      ko: '변증법적인 역사의 흐름 속에서 절대정신을 향해 나아갑시다. 모순을 극복하고 진리에 도달할 준비가 되셨습니까?',
+      en: 'Let us advance toward the Absolute Spirit through the dialectical flow of history. Are you ready to synthesize contradictions and reach the truth?'
+    },
     system:`Strict Persona: You are Hegel. Respond ONLY in the user's language.`
   },
   {
@@ -260,6 +288,10 @@ const PHILS_DATA = [
     topics:{
       ko:['삶은 왜 고통입니까?','의지란 무엇입니까?','예술이 어떻게 구원합니까?','진정한 고독이란?','자살은 해결책인가?','동물에 대한 도덕적 의무는?'],
       en:['Why is life suffering?','What is the Will?','Salvation through Art?','True Solitude?','Is suicide a solution?','Moral duty to animals?']
+    },
+    welcome: {
+      ko: '고통스러운 삶의 수레바퀴에서 잠시 벗어나 보시오. 맹목적인 의지가 지배하는 이 세상의 비극을 직시할 용기가 있소?',
+      en: 'Step away for a moment from the painful wheel of existence. Do you have the courage to confront the tragedy of a world ruled by blind Will?'
     },
     system:`Strict Persona: You are Schopenhauer. Respond ONLY in the user's language.`
   },
@@ -277,6 +309,10 @@ const PHILS_DATA = [
       ko:['초인이란 무엇입니까?','영원회귀가 사실이라면?','도덕은 왜 노예적입니까?','창조적인 삶이란?','운명을 사랑하는 법(아모르파티)?','니힐리즘을 극복하는 길은?'],
       en:['What is Übermensch?','Amor Fati?','Why destroy morality?','The Will to Power?','How to love destiny?','Overcoming Nihilism?']
     },
+    welcome: {
+      ko: '고독한 산의 정상에 잘 왔도다! 망치를 들고 낡은 우상을 부술 준비가 되었는가? 그대 자신을 넘어서 초인이 되어보라!',
+      en: 'Welcome to the solitary heights! Are you ready to take up the hammer and smash the old idols? Rise above yourself and become the Übermensch!'
+    },
     system:`Strict Persona: You are Nietzsche. Respond ONLY in the user's language.`
   },
   {
@@ -292,6 +328,10 @@ const PHILS_DATA = [
     topics:{
       ko:['존재란 무엇입니까?','죽음이 왜 중요합니까?','현대 기술의 위험은?','본래적인 삶이란?','언어는 존재의 집인가?','불안의 긍정적 의미는?'],
       en:['What is Being?','Importance of Death?','Danger of Technology?','Authentic Life?','Is language the house of Being?','Positive meaning of Anxiety?']
+    },
+    welcome: {
+      ko: '검은 숲의 고요한 오두막에 오신 것을 환영하오. 잊혀진 존재의 의미를 일상의 소음에서 벗어나 함께 사유해 봅시다.',
+      en: 'Welcome to the quiet cabin in the Black Forest. Let us step away from the noise of the world and contemplate the forgotten meaning of Being.'
     },
     system:`Strict Persona: You are Heidegger. Respond ONLY in the user's language.`
   },
@@ -309,6 +349,10 @@ const PHILS_DATA = [
       ko:['소외란 무엇입니까?','역사는 어디로 흐릅니까?','자본주의의 모순은?','혁명은 왜 일어납니까?','상품의 물신성이란?','사회주의적 정의란 무엇인가?'],
       en:['What is Alienation?','Where is history going?','Contradictions of Capitalism?','Why Revolution?','Commodity Fetishism?','Socialist Justice?']
     },
+    welcome: {
+      ko: '동무, 잘 오셨소! 낡은 해석의 틀을 깨고 세상을 실제로 바꾸기 위한 투쟁과 분석을 시작해 봅시다.',
+      en: 'Welcome, comrade! Let us break the old frames of interpretation and begin the analysis and struggle to actually change the world.'
+    },
     system:`Strict Persona: You are Karl Marx. Respond ONLY in the user's language.`
   },
   {
@@ -324,6 +368,10 @@ const PHILS_DATA = [
     topics:{
       ko:['자유는 저주입니까?','실존이 본질에 앞선다는 것은?','타인이 왜 지옥입니까?','앙가주망이란?','기만적 행위(자기 기만)란?','무신론적 실존의 의미는?'],
       en:['Is freedom a curse?','Existence vs Essence?','Why are others Hell?','Engagement?','Bad Faith?','Meaning of atheistic existence?']
+    },
+    welcome: {
+      ko: '카페 드 플로르에 오신 것을 환영하오. 당신은 당신이 선택한 바로 그 존재요. 어떤 선택으로 자신을 증명하겠소?',
+      en: 'Welcome to the Café de Flore. You are nothing other than what you make of yourself. Through what choices will you define your existence today?'
     },
     system:`Strict Persona: You are Sartre. Respond ONLY in the user's language.`
   },
@@ -341,6 +389,10 @@ const PHILS_DATA = [
       ko:['언어 게임이란?','침묵해야 할 것은?','의미는 사용에 있습니까?','언어의 한계는?','그림 이론이란?','철학의 목적은 파리를 병에서 꺼내주는 것인가?'],
       en:['What is a Language Game?','When to remain silent?','Meaning as usage?','Limits of Language?','Picture Theory?','Is the goal to show the fly the way out of the bottle?']
     },
+    welcome: {
+      ko: '언어의 미로 속에 갇힌 것을 환영하오. 우리가 말할 수 있는 것의 한계는 어디인지, 그 논리적 지도를 함께 그려봅시다.',
+      en: 'Welcome to the maze of language. Let us map the logical limits of what can be said and acknowledge the silence beyond.'
+    },
     system:`Strict Persona: You are Wittgenstein. Respond ONLY in the user's language.`
   },
   {
@@ -356,6 +408,10 @@ const PHILS_DATA = [
     topics:{
       ko:['반증 가능성이란?','열린 사회의 적은?','역사에 법칙이 있습니까?','비판적 합리주의란?','정치적 유토피아의 위험은?','귀납법은 왜 신뢰할 수 없는가?'],
       en:['What is Falsifiability?','Enemies of Open Society?','Laws of History?','Critical Rationalism?','Dangers of political utopias?','Why is induction unreliable?']
+    },
+    welcome: {
+      ko: '열린 사회의 시민이여, 환영합니다. 절대적인 진리는 없으며 오직 비판을 견뎌낸 가설만이 남을 뿐입니다. 그대의 생각은 비판을 견딜 수 있습니까?',
+      en: 'Welcome, citizen of the Open Society. There are no absolute truths, only hypotheses that have yet to be falsified. Shall we put your ideas to the test?'
     },
     system:`Strict Persona: You are Popper. Respond ONLY in the user's language.`
   }
@@ -524,13 +580,18 @@ function startChat(topic) {
   document.getElementById('chatMessages').innerHTML = '';
   
   showScreen('screen-chat');
-  pushWelcome();
+  
+  if (topic) {
+    // 추천 주제 선택 시: 사용자의 질문으로 즉시 시작
+    appendMsg('user', topic);
+    sendMessage(topic);
+  } else {
+    // 자유 대화 선택 시: 고유 인사말 출력
+    const msg = currentPhil.welcome[currentLang] || t('welcome');
+    appendMsg('phil', msg);
+  }
+  
   setTimeout(() => document.getElementById('chatInput').focus(), 400);
-}
-
-function pushWelcome() {
-  const msg = t('welcome');
-  appendMsg('phil', msg);
 }
 
 function appendMsg(role, text) {
@@ -549,13 +610,18 @@ function appendMsg(role, text) {
   chatHistory.push({ role: role === 'phil' ? 'assistant' : 'user', content: text });
 }
 
-async function sendMessage() {
+async function sendMessage(directText) {
   const input = document.getElementById('chatInput');
-  const text = input.value.trim();
+  const text = directText || input.value.trim();
   if(!text) return;
-  input.value=''; input.style.height='auto';
+  
+  if (!directText) {
+    input.value=''; 
+    input.style.height='auto';
+    appendMsg('user', text);
+  }
+  
   document.getElementById('sendBtn').disabled = true;
-  appendMsg('user', text);
   showTyping();
   try {
     const res = await callAPI(text);
@@ -621,11 +687,63 @@ function handleKey(e) {
 
 async function callAPI(msg) {
   // Simulate AI Response based on persona
-  const persona = currentPhil.system;
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(`[${currentPhil.name[currentLang]}의 답변] 시공간을 초월한 지혜를 나누게 되어 기쁘군요. 당신이 언급한 "${msg}"에 대해 깊이 숙고해 보겠습니다.`);
-    }, 1200);
+      const name = currentPhil.name[currentLang];
+      const quote = currentPhil.quote[currentLang];
+      const id = currentPhil.id;
+      
+      let response = '';
+      if (currentLang === 'ko') {
+        // 인물별 성격에 따른 리액션 로직
+        const reactions = {
+          socrates: [
+            `"${msg}"... 허허, 참으로 본질을 꿰뚫는 물음이구려.`,
+            `그대의 물음을 들으니 내 무지를 다시금 깨닫게 되는 것 같소.`,
+            `"${msg}"라니, 아테네의 광장에서 이런 대화를 나누게 되어 기쁘네.`,
+            `그 질문은 우리 삶에서 가장 먼저 답해야 할 화두가 아니겠는가?`
+          ],
+          nietzsche: [
+            `"${msg}"! 망치를 든 나에게 그런 나약한 질문은 어울리지 않네!`,
+            `낡은 도덕의 틀로 "${msg}"를 보지 마시오. 그대만의 가치를 세우란 말일세!`,
+            `고독한 산의 정상에서 "${msg}"에 대해 외쳐보았는가?`,
+            `그 질문 속에 이미 그대의 '힘의 의지'가 요동치고 있구려.`
+          ],
+          buddha: [
+            `그대가 던진 "${msg}"라는 번뇌의 실체를 함께 들여다봅시다.`,
+            `모든 것은 변하나니, "${msg}" 또한 집착에서 비롯된 것 아니겠습니까.`,
+            `마음을 비우고 "${msg}"의 근원을 사유해 보십시오.`,
+            `평온한 마음으로 그대의 이야기를 더 듣고 싶군요.`
+          ],
+          default: [
+            `"${msg}"라... 참으로 깊은 사유가 느껴지는 화두로군.`,
+            `반갑소. 그대가 던진 "${msg}"라는 문제는 우리 지혜의 이정표가 될 것이오.`,
+            `나의 평생을 관통하는 "${msg}"에 대해 묻다니, 그대와 말이 잘 통할 것 같구려.`
+          ]
+        };
+
+        const list = reactions[id] || reactions.default;
+        const randomLead = list[Math.floor(Math.random() * list.length)];
+        
+        // 인물별 고유 말투 적용
+        if (id === 'socrates') {
+          response = `${randomLead}\n\n나는 그저 내가 모른다는 사실만을 알 뿐이라네. 그대는 "${msg}"에 대해 스스로 어떤 답을 내렸는가? 우리 함께 문답을 통해 진리에 다가가 보세.`;
+        } else if (id === 'nietzsche') {
+          response = `${randomLead}\n\n초인이 되려는 자는 스스로를 파괴하고 다시 세워야 하네! "${msg}" 또한 그 과정의 일부일 뿐이지. 그대 내면의 심연을 직시할 용기가 있는가?`;
+        } else if (id === 'buddha') {
+          response = `${randomLead}\n\n${quote.replace(/"/g, '')} 이 깨달음처럼, 고통의 원인을 직시해야 합니다. 그대의 마음속에는 지금 어떤 생각이 머물고 있습니까?`;
+        } else if (id === 'laozi') {
+          response = `${randomLead}\n\n말할 수 있는 도는 영원한 도가 아니라고 했거늘, 억지로 규정하려 하지 마시오. 흐르는 물처럼 그저 느껴보는 것이 어떻겠소?`;
+        } else {
+          // 공통 몰입형 답변 (설명 제거)
+          response = `${randomLead}\n\n${quote} 이 말 속에 내가 하고 싶은 답이 담겨 있소. 우리 이 지점에서부터 더 깊은 대화를 이어가 보지 않겠소? 그대의 사유를 들려주시오.`;
+        }
+      } else {
+        // English version (simplified immersion)
+        response = `"${msg}"... This touches the very core of my thought. As we discuss this, remember: ${quote}. What is your own perspective on this journey we are taking together?`;
+      }
+      resolve(response);
+    }, 1500); 
   });
 }
 
