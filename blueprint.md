@@ -10,28 +10,16 @@
     *   **Step 3 (Dialogue):** An immersive chat environment mimicking the philosopher's unique persona, style, and arguments. Includes utility buttons for navigation and saving the conversation.
 *   **Aesthetics:** Premium "dark mode" by default with a parchment-like texture, gold accents, and expressive typography (Cinzel, Noto Serif KR). High-depth visual effects and interactive glow.
 *   **Dialogue Export:** Users can download their conversations as a formatted TXT file with clear speaker labels ("나: ", "철학인: ").
-*   **AdSense Optimization:**
-    *   Semantic HTML5 structure.
-    *   Clear and intuitive navigation.
-    *   Dedicated sections for legal notices (Privacy, Terms).
-    *   Fast-loading, framework-less implementation.
-    *   Mobile-responsive design.
+*   **Multi-Language Support (i18n):** Supports 21 global languages including English, Korean, Japanese, Chinese (Simplified/Traditional), Spanish, French, German, Italian, Portuguese, Russian, Arabic, Hindi, Turkish, Polish, Dutch, Swedish, Thai, Vietnamese, Indonesian, and Czech.
 
-## **Current Task: Implementing the Multi-Page Flow & Content Expansion**
+## **Current Task: Implementing 21-Language Multi-Language Support (i18n)**
 
 ### **Plan & Steps**
-1.  **Data Expansion:** Update `PHILS_DATA` in `main.js` to include richer information for each philosopher (History, Characteristics) to fulfill the Step 2 requirements.
-2.  **Step 2 Logic Update:** Refactor `buildDetail()` to:
-    *   Display the new "History" and "Characteristics" sections.
-    *   Implement the "4 Random Topics + 1 Free Talk" button logic.
-3.  **Step 3 Logic Update:**
-    *   Ensure the top bar buttons are correctly placed and styled.
-    *   Refine `saveChatLog()` to use the specific "나: ~", "철학인: ~" format.
-4.  **AdSense Optimization:**
-    *   Improve semantic structure in `index.html`.
-    *   Enhance "About", "Privacy", and "Terms" modal content with more realistic text.
-    *   Ensure all images have proper `alt` tags and descriptions.
-5.  **Visual Polish:** Enhance transitions between screens to feel like "page transitions" as requested.
+1.  **Update UI (index.html):** Expand the language selector dropdown with all 21 languages in their native names.
+2.  **Expand I18N Object (main.js):** Add UI string translations for all 21 languages.
+3.  **Localize Philosopher Names (main.js):** Update `PHILS_DATA` to include the `name` field in all 21 languages for each philosopher.
+4.  **Content Fallback Logic:** Refine the translation logic to fall back to English if specific content (e.g., description, history) is not available in the target language.
+5.  **Simulated Response Localization:** Ensure the simulated AI responses in `callAPI()` reflect the selected language.
 
 ## **Implementation Details**
 *   **State Management:** Use a simple variable-based state to track the current screen and philosopher.

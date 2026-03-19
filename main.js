@@ -2,62 +2,33 @@
 
 // ===================== I18N DATA =====================
 const I18N = {
-  ko: {
-    siteTitle: '철학인의 방',
-    siteTagline: '시대를 초월한 사상가들과의 대화',
-    galleryHeading: '대화를 나누고 싶은 철학인을 선택하세요',
-    backToGallery: '← 철학인 목록',
-    changeTopic: '대화주제 변경',
-    changePhil: '철학인 변경',
-    saveChat: '대화 저장',
-    freeChat: '자유롭게 대화하기',
-    topicLabel: '✦ {name}의 주요 사상 및 대화 주제',
-    historyLabel: '📜 연혁 및 배경',
-    featuresLabel: '✨ 특징 및 화법',
-    thoughtsLabel: '💡 주요 사상',
-    inputPlaceholder: '심오한 생각을 나누어보세요…',
-    inputHint: 'Enter 전송 · Shift+Enter 줄바꿈',
-    skipAd: '계속하기 →',
-    adLabel: 'A D V E R T I S E M E N T',
-    welcome: '어서 오십시오. 무엇이든 이야기해 보십시오.',
-    exportMe: '나',
-    footerText: '© 2026 Philosophia · 위대한 철학인들과 AI로 대화하는 공간',
-    privacy: '개인정보처리방침',
-    terms: '이용약관',
-    about: '소개',
-    contact: '문의'
-  },
-  en: {
-    siteTitle: "Philosopher's Chamber",
-    siteTagline: 'Conversations with Timeless Minds',
-    galleryHeading: 'Choose a philosopher to begin your journey',
-    backToGallery: '← Gallery',
-    changeTopic: 'Change Topic',
-    changePhil: 'Change Sage',
-    saveChat: 'Save Chat',
-    freeChat: 'Talk Freely',
-    topicLabel: '✦ {name}\'s Sphere of Thought',
-    historyLabel: '📜 History & Context',
-    featuresLabel: '✨ Characteristics',
-    thoughtsLabel: '💡 Key Thoughts',
-    inputPlaceholder: 'Share your profound thoughts…',
-    inputHint: 'Enter to send · Shift+Enter for newline',
-    skipAd: 'Continue →',
-    adLabel: 'A D V E R T I S E M E N T',
-    welcome: 'Welcome. What is on your mind today?',
-    exportMe: 'Me',
-    footerText: '© 2026 Philosophia · AI-Powered Dialogues with Great Thinkers',
-    privacy: 'Privacy Policy',
-    terms: 'Terms',
-    about: 'About',
-    contact: 'Contact'
-  }
+  ko: { siteTitle: '철학인의 방', siteTagline: '시대를 초월한 사상가들과의 대화', galleryHeading: '대화를 나누고 싶은 철학인을 선택하세요', backToGallery: '← 철학인 목록', changeTopic: '대화주제 변경', changePhil: '철학인 변경', saveChat: '대화 저장', freeChat: '자유롭게 대화하기', topicLabel: '✦ {name}의 주요 사상 및 대화 주제', historyLabel: '📜 연혁 및 배경', featuresLabel: '✨ 특징 및 화법', thoughtsLabel: '💡 주요 사상', inputPlaceholder: '심오한 생각을 나누어보세요…', inputHint: 'Enter 전송 · Shift+Enter 줄바꿈', skipAd: '계속하기 →', adLabel: 'A D V E R T I S E M E N T', welcome: '어서 오십시오. 무엇이든 이야기해 보십시오.', exportMe: '나', footerText: '© 2026 Philosophia · 위대한 철학인들과 AI로 대화하는 공간', privacy: '개인정보처리방침', terms: '이용약관', about: '소개', contact: '문의' },
+  en: { siteTitle: "Philosopher's Chamber", siteTagline: 'Conversations with Timeless Minds', galleryHeading: 'Choose a philosopher to begin your journey', backToGallery: '← Gallery', changeTopic: 'Change Topic', changePhil: 'Change Sage', saveChat: 'Save Chat', freeChat: 'Talk Freely', topicLabel: '✦ {name}\'s Sphere of Thought', historyLabel: '📜 History & Context', featuresLabel: '✨ Characteristics', thoughtsLabel: '💡 Key Thoughts', inputPlaceholder: 'Share your profound thoughts…', inputHint: 'Enter to send · Shift+Enter for newline', skipAd: 'Continue →', adLabel: 'A D V E R T I S E M E N T', welcome: 'Welcome. What is on your mind today?', exportMe: 'Me', footerText: '© 2026 Philosophia · AI-Powered Dialogues with Great Thinkers', privacy: 'Privacy Policy', terms: 'Terms', about: 'About', contact: 'Contact' },
+  ja: { siteTitle: '哲学者の間', siteTagline: '時代を超えた思想家との対話', galleryHeading: '対話したい哲学者を選択してください', backToGallery: '← ギャラリー', changeTopic: 'トピック変更', changePhil: '哲学者を変更', saveChat: '対話を保存', freeChat: '自由に対話する', topicLabel: '✦ {name}の主要思想と対話トピック', historyLabel: '📜 沿革と背景', featuresLabel: '✨ 特徴と話法', thoughtsLabel: '💡 主要思想', inputPlaceholder: '深い考えを共有してください…', inputHint: 'Enterで送信 · Shift+Enterで改行', skipAd: '続行 →', adLabel: '広 告', welcome: 'ようこそ。何でもお話しください。', exportMe: '私', footerText: '© 2026 Philosophia · 偉大な哲学者とAIで対話する空間', privacy: 'プライバシーポリシー', terms: '利用規約', about: '紹介', contact: 'お問い合わせ' },
+  "zh-CN": { siteTitle: '哲人之室', siteTagline: '与跨越时代的思想家对话', galleryHeading: '选择一位你想对话的哲学家', backToGallery: '← 画廊', changeTopic: '更换话题', changePhil: '更换哲人', saveChat: '保存对话', freeChat: '自由交谈', topicLabel: '✦ {name}的主要思想与对话主题', historyLabel: '📜 历史与背景', featuresLabel: '✨ 特点与谈吐', thoughtsLabel: '💡 核心思想', inputPlaceholder: '分享你的深刻见解…', inputHint: 'Enter 发送 · Shift+Enter 换行', skipAd: '继续 →', adLabel: '广 告', welcome: '欢迎。今天你想聊些什么？', exportMe: '我', footerText: '© 2026 Philosophia · 与伟大哲学家进行AI对话的空间', privacy: '隐私政策', terms: '使用条款', about: '关于', contact: '联系我们' },
+  "zh-TW": { siteTitle: '哲人之室', siteTagline: '與跨越時代的思想家對話', galleryHeading: '選擇一位你想對話的哲學家', backToGallery: '← 畫廊', changeTopic: '更換話題', changePhil: '更換哲人', saveChat: '保存對話', freeChat: '自由交談', topicLabel: '✦ {name}的主要思想與對話主題', historyLabel: '📜 歷史與背景', featuresLabel: '✨ 特點與談吐', thoughtsLabel: '💡 核心思想', inputPlaceholder: '分享你的深刻見解…', inputHint: 'Enter 發送 · Shift+Enter 換行', skipAd: '繼續 →', adLabel: '廣 告', welcome: '歡迎。今天你想聊些什麼？', exportMe: '我', footerText: '© 2026 Philosophia · 與偉大哲學家進行AI對話的空間', privacy: '隱私政策', terms: '使用條款', about: '關於', contact: '聯繫我們' },
+  es: { siteTitle: 'Cámara del Filósofo', siteTagline: 'Conversaciones con Mentes Eternas', galleryHeading: 'Elige un filósofo para comenzar', backToGallery: '← Galería', changeTopic: 'Cambiar Tema', changePhil: 'Cambiar Sabio', saveChat: 'Guardar Chat', freeChat: 'Hablar Libremente', topicLabel: '✦ Esfera de Pensamiento de {name}', historyLabel: '📜 Historia y Contexto', featuresLabel: '✨ Características', thoughtsLabel: '💡 Ideas Clave', inputPlaceholder: 'Comparte tus pensamientos profundos…', inputHint: 'Enter para enviar · Shift+Enter para nueva línea', skipAd: 'Continuar →', adLabel: 'P U B L I C I D A D', welcome: 'Bienvenido. ¿Qué tienes en mente hoy?', exportMe: 'Yo', footerText: '© 2026 Philosophia · Diálogos con Grandes Pensadores', privacy: 'Privacidad', terms: 'Términos', about: 'Acerca de', contact: 'Contacto' },
+  fr: { siteTitle: 'Chambre du Philosophe', siteTagline: 'Conversations avec des Esprits Intemporels', galleryHeading: 'Choisissez un philosophe', backToGallery: '← Galerie', changeTopic: 'Changer de Sujet', changePhil: 'Changer de Sage', saveChat: 'Enregistrer le Chat', freeChat: 'Parler Librement', topicLabel: '✦ Sphère de Pensée de {name}', historyLabel: '📜 Histoire et Contexte', featuresLabel: '✨ Caractéristiques', thoughtsLabel: '💡 Idées Clés', inputPlaceholder: 'Partagez vos pensées profondes…', inputHint: 'Entrée pour envoyer · Shift+Entrée pour nouvelle ligne', skipAd: 'Continuer →', adLabel: 'P U B L I C I T É', welcome: 'Bienvenue. Qu\'avez-vous à l\'esprit aujourd\'hui ?', exportMe: 'Moi', footerText: '© 2026 Philosophia · Dialogues avec de Grands Penseurs', privacy: 'Confidentialité', terms: 'Conditions', about: 'À propos', contact: 'Contact' },
+  de: { siteTitle: 'Kammer des Philosophen', siteTagline: 'Gespräche mit zeitlosen Geistern', galleryHeading: 'Wählen Sie einen Philosophen', backToGallery: '← Galerie', changeTopic: 'Thema ändern', changePhil: 'Philosophen wechseln', saveChat: 'Chat speichern', freeChat: 'Frei sprechen', topicLabel: '✦ Denksphäre von {name}', historyLabel: '📜 Geschichte & Kontext', featuresLabel: '✨ Merkmale', thoughtsLabel: '💡 Kernideen', inputPlaceholder: 'Teilen Sie Ihre tiefen Gedanken…', inputHint: 'Enter zum Senden · Shift+Enter für neue Zeile', skipAd: 'Weiter →', adLabel: 'W E R B U N G', welcome: 'Willkommen. Was beschäftigt Sie heute?', exportMe: 'Ich', footerText: '© 2026 Philosophia · Dialoge mit großen Denkern', privacy: 'Datenschutz', terms: 'Bedingungen', about: 'Über uns', contact: 'Kontakt' },
+  it: { siteTitle: 'Stanza del Filosofo', siteTagline: 'Conversazioni con Menti Senza Tempo', galleryHeading: 'Scegli un filosofo', backToGallery: '← Galleria', changeTopic: 'Cambia Argomento', changePhil: 'Cambia Saggio', saveChat: 'Salva Chat', freeChat: 'Parla Liberamente', topicLabel: '✦ Sfera di Pensiero di {name}', historyLabel: '📜 Storia e Contesto', featuresLabel: '✨ Caratteristiche', thoughtsLabel: '💡 Idee Chiave', inputPlaceholder: 'Condividi i tuoi pensieri profondi…', inputHint: 'Invio per inviare · Shift+Invio per nuova riga', skipAd: 'Continua →', adLabel: 'P U B B L I C I T À', welcome: 'Benvenuto. Cosa ti passa per la testa oggi?', exportMe: 'Io', footerText: '© 2026 Philosophia · Dialoghi con Grandi Pensatori', privacy: 'Privacy', terms: 'Termini', about: 'Informazioni', contact: 'Contatti' },
+  pt: { siteTitle: 'Câmara do Filósofo', siteTagline: 'Conversas com Mentes Atemporais', galleryHeading: 'Escolha um filósofo', backToGallery: '← Galeria', changeTopic: 'Alterar Tópico', changePhil: 'Alterar Sábio', saveChat: 'Salvar Chat', freeChat: 'Falar Livremente', topicLabel: '✦ Esfera de Pensamento de {name}', historyLabel: '📜 História e Contexto', featuresLabel: '✨ Características', thoughtsLabel: '💡 Ideias-Chave', inputPlaceholder: 'Compartilhe seus pensamentos profundos…', inputHint: 'Enter para enviar · Shift+Enter para nova linha', skipAd: 'Continuar →', adLabel: 'P U B L I C I D A D E', welcome: 'Bem-vindo. O que está em sua mente hoje?', exportMe: 'Eu', footerText: '© 2026 Philosophia · Diálogos com Grandes Pensadores', privacy: 'Privacidade', terms: 'Termos', about: 'Sobre', contact: 'Contato' },
+  ru: { siteTitle: 'Комната философа', siteTagline: 'Беседы с вечными умами', galleryHeading: 'Выберите философа', backToGallery: '← Галерея', changeTopic: 'Сменить тему', changePhil: 'Сменить мудреца', saveChat: 'Сохранить чат', freeChat: 'Свободное общение', topicLabel: '✦ Сфера мысли {name}', historyLabel: '📜 История и контекст', featuresLabel: '✨ Характеристики', thoughtsLabel: '💡 Ключевые идеи', inputPlaceholder: 'Поделитесь своими глубокими мыслями…', inputHint: 'Enter для отправки · Shift+Enter для новой строки', skipAd: 'Продолжить →', adLabel: 'Р Е К Л А М А', welcome: 'Добро пожаловать. Что у вас на уме сегодня?', exportMe: 'Я', footerText: '© 2026 Philosophia · Диалоги с великими мыслителями', privacy: 'Конфиденциальность', terms: 'Условия', about: 'О нас', contact: 'Контакты' },
+  ar: { siteTitle: 'غرفة الفيلسوف', siteTagline: 'حوارات مع عقول خالدة', galleryHeading: 'اختر فيلسوفاً للبدء', backToGallery: '← المعرض', changeTopic: 'تغيير الموضوع', changePhil: 'تغيير الحكيم', saveChat: 'حفظ الحوار', freeChat: 'تحدث بحرية', topicLabel: '✦ مجال فكر {name}', historyLabel: '📜 التاريخ والسياق', featuresLabel: '✨ الخصائص', thoughtsLabel: '💡 الأفكار الرئيسية', inputPlaceholder: 'شارك أفكارك العميقة...', inputHint: 'Enter للإرسال · Shift+Enter لسطر جديد', skipAd: 'استمرار ←', adLabel: 'إ ع ل ا ن', welcome: 'أهلاً بك. ما الذي يدور في ذهنك اليوم؟', exportMe: 'أنا', footerText: '© 2026 Philosophia · حوارات مدعومة بالذكاء الاصطناعي مع كبار المفكرين', privacy: 'الخصوصية', terms: 'الشروط', about: 'حول', contact: 'اتصل بنا' },
+  hi: { siteTitle: 'दार्शनिक का कक्ष', siteTagline: 'कालातीत मति के साथ संवाद', galleryHeading: 'शुरू करने के लिए एक दार्शनिक चुनें', backToGallery: '← गैलरी', changeTopic: 'विषय बदलें', changePhil: 'ऋषि बदलें', saveChat: 'चैट सहेजें', freeChat: 'खुलकर बात करें', topicLabel: '✦ {name} का विचार क्षेत्र', historyLabel: '📜 इतिहास और संदर्भ', featuresLabel: '✨ विशेषताएं', thoughtsLabel: '💡 मुख्य विचार', inputPlaceholder: 'अपने गहरे विचार साझा करें...', inputHint: 'भेजने के लिए Enter · नई लाइन के लिए Shift+Enter', skipAd: 'जारी रखें →', adLabel: 'वि ज्ञा प न', welcome: 'स्वागत है। आज आपके मन में क्या है?', exportMe: 'मैं', footerText: '© 2026 Philosophia · महान विचारकों के साथ AI-आधारित संवाद', privacy: 'गोपनीयता', terms: 'शर्तें', about: 'बारे में', contact: 'संपर्क' },
+  tr: { siteTitle: 'Filozofun Odası', siteTagline: 'Zamana Meydan Okuyan Zihinlerle Sohbetler', galleryHeading: 'Başlamak için bir filozof seçin', backToGallery: '← Galeri', changeTopic: 'Konuyu Değiştir', changePhil: 'Bilgeyi Değiştir', saveChat: 'Sohbeti Kaydet', freeChat: 'Özgürce Konuş', topicLabel: '✦ {name}\'ın Düşünce Küresi', historyLabel: '📜 Tarih ve Bağlam', featuresLabel: '✨ Özellikler', thoughtsLabel: '💡 Temel Düşünceler', inputPlaceholder: 'Derin düşüncelerinizi paylaşın…', inputHint: 'Göndermek için Enter · Yeni satır için Shift+Enter', skipAd: 'Devam Et →', adLabel: 'R E K L اے M', welcome: 'Hoş geldiniz. Bugün aklınızda ne var?', exportMe: 'Ben', footerText: '© 2026 Philosophia · Büyük Düşünürlerle AI Destekli Diyaloglar', privacy: 'Gizlilik', terms: 'Koşullar', about: 'Hakkında', contact: 'İletişim' },
+  pl: { siteTitle: 'Komnata Filozofa', siteTagline: 'Rozmowy z ponadczasowymi umysłami', galleryHeading: 'Wybierz filozofa', backToGallery: '← Galeria', changeTopic: 'Zmień temat', changePhil: 'Zmień mędrca', saveChat: 'Zapisz czat', freeChat: 'Rozmawiaj swobodnie', topicLabel: '✦ Sfera myśli {name}', historyLabel: '📜 Historia i kontekst', featuresLabel: '✨ Charakterystyka', thoughtsLabel: '💡 Kluczowe myśli', inputPlaceholder: 'Podziel się swoimi głębokimi przemyśleniami…', inputHint: 'Enter, aby wysłać · Shift+Enter dla nowej linii', skipAd: 'Kontynuuj →', adLabel: 'R E K L A M A', welcome: 'Witaj. Co masz dzisiaj na myśli?', exportMe: 'Ja', footerText: '© 2026 Philosophia · Dialogi z wielkimi myślicielami', privacy: 'Prywatność', terms: 'Regulamin', about: 'O nas', contact: 'Kontakt' },
+  nl: { siteTitle: 'Kamer van de Filosoof', siteTagline: 'Gesprekken met tijdloze geesten', galleryHeading: 'Kies een filosoof', backToGallery: '← Galerij', changeTopic: 'Onderwerp wijzigen', changePhil: 'Filosoof wijzigen', saveChat: 'Chat opslaan', freeChat: 'Vrijuit praten', topicLabel: '✦ Denkwereld van {name}', historyLabel: '📜 Geschiedenis & Context', featuresLabel: '✨ Kenmerken', thoughtsLabel: '💡 Kernideeën', inputPlaceholder: 'Deel je diepe gedachten…', inputHint: 'Enter om te verzenden · Shift+Enter voor nieuwe regel', skipAd: 'Doorgaan →', adLabel: 'A D V E R T E N T I E', welcome: 'Welkom. Wat houdt je vandaag bezig?', exportMe: 'Ik', footerText: '© 2026 Philosophia · Dialogen met grote denkers', privacy: 'Privacy', terms: 'Voorwaarden', about: 'Over ons', contact: 'Contact' },
+  sv: { siteTitle: 'Filosofens Kammare', siteTagline: 'Samtal med tidlösa sinnen', galleryHeading: 'Välj en filosof', backToGallery: '← Galleri', changeTopic: 'Ändra ämne', changePhil: 'Byt visman', saveChat: 'Spara chatt', freeChat: 'Prata fritt', topicLabel: '✦ {name}s tankevärld', historyLabel: '📜 Historia & Kontext', featuresLabel: '✨ Egenskaper', thoughtsLabel: '💡 Nyckeltankar', inputPlaceholder: 'Dela dina djupa tankar…', inputHint: 'Enter för att skicka · Shift+Enter för ny rad', skipAd: 'Fortsätt →', adLabel: 'A N N O N S', welcome: 'Välkommen. Vad har du på hjärtat idag?', exportMe: 'Jag', footerText: '© 2026 Philosophia · AI-drivna dialoger med stora tänkare', privacy: 'Integritet', terms: 'Villkor', about: 'Om oss', contact: 'Kontakt' },
+  th: { siteTitle: 'ห้องแห่งนักปรัชญา', siteTagline: 'การสนทนากับความนึกคิดที่อยู่เหนือกาลเวลา', galleryHeading: 'เลือกนักปรัชญาเพื่อเริ่มต้น', backToGallery: '← แกลเลอรี', changeTopic: 'เปลี่ยนหัวข้อ', changePhil: 'เปลี่ยนผู้นำทาง', saveChat: 'บันทึกการสนทนา', freeChat: 'พูดคุยอย่างอิสระ', topicLabel: '✦ ขอบเขตทางความคิดของ {name}', historyLabel: '📜 ประวัติและบริบท', featuresLabel: '✨ ลักษณะเฉพาะ', thoughtsLabel: '💡 ความคิดหลัก', inputPlaceholder: 'แบ่งปันความคิดที่ลึกซึ้งของคุณ...', inputHint: 'Enter เพื่อส่ง · Shift+Enter เพื่อขึ้นบรรทัดใหม่', skipAd: 'ดำเนินการต่อ →', adLabel: 'โ ฆ ษ ณ า', welcome: 'ยินดีต้อนรับ วันนี้คุณมีเรื่องอะไรในใจหรือ?', exportMe: 'ฉัน', footerText: '© 2026 Philosophia · การสนทนากับนักคิดผู้ยิ่งใหญ่ผ่าน AI', privacy: 'ความเป็นส่วนตัว', terms: 'ข้อกำหนด', about: 'เกี่ยวกับ', contact: 'ติดต่อ' },
+  vi: { siteTitle: 'Căn Phòng Triết Gia', siteTagline: 'Trò chuyện với những tâm hồn vượt thời gian', galleryHeading: 'Chọn một triết gia để bắt đầu', backToGallery: '← Bộ sưu tập', changeTopic: 'Đổi chủ đề', changePhil: 'Đổi triết gia', saveChat: 'Lưu cuộc trò chuyện', freeChat: 'Trò chuyện tự do', topicLabel: '✦ Thế giới tư tưởng của {name}', historyLabel: '📜 Lịch sử & Bối cảnh', featuresLabel: '✨ Đặc điểm', thoughtsLabel: '💡 Tư tưởng chủ đạo', inputPlaceholder: 'Chia sẻ những suy nghĩ sâu sắc của bạn…', inputHint: 'Enter để gửi · Shift+Enter để xuống dòng', skipAd: 'Tiếp tục →', adLabel: 'Q UẢ N G C Á O', welcome: 'Chào mừng. Bạn đang suy nghĩ điều gì hôm nay?', exportMe: 'Tôi', footerText: '© 2026 Philosophia · Đối thoại với các nhà tư tưởng lớn qua AI', privacy: 'Bảo mật', terms: 'Điều khoản', about: 'Giới thiệu', contact: 'Liên hệ' },
+  id: { siteTitle: 'Ruang Filsuf', siteTagline: 'Percakapan dengan Pemikiran Abadi', galleryHeading: 'Pilih seorang filsuf', backToGallery: '← Galeri', changeTopic: 'Ubah Topik', changePhil: 'Ganti Bijak', saveChat: 'Simpan Obrolan', freeChat: 'Bicara Bebas', topicLabel: '✦ Ranah Pemikiran {name}', historyLabel: '📜 Sejarah & Konteks', featuresLabel: '✨ Karakteristik', thoughtsLabel: '💡 Pemikiran Utama', inputPlaceholder: 'Bagikan pemikiran mendalam Anda…', inputHint: 'Enter untuk mengirim · Shift+Enter untuk baris baru', skipAd: 'Lanjutkan →', adLabel: 'I K L A N', welcome: 'Selamat datang. Apa yang ada di pikiran Anda hari ini?', exportMe: 'Saya', footerText: '© 2026 Philosophia · Dialog Berbasis AI dengan Pemikir Besar', privacy: 'Privasi', terms: 'Ketentuan', about: 'Tentang', contact: 'Kontak' },
+  cs: { siteTitle: 'Komnata filosofa', siteTagline: 'Rozhovory s nadčasovými mysliteli', galleryHeading: 'Vyberte si filosofa', backToGallery: '← Galerie', changeTopic: 'Změnit téma', changePhil: 'Změnit mudrce', saveChat: 'Uložit chat', freeChat: 'Mluvit svobodně', topicLabel: '✦ Sféra myšlení {name}', historyLabel: '📜 Historie a kontext', featuresLabel: '✨ Charakteristika', thoughtsLabel: '💡 Klíčové myšlenky', inputPlaceholder: 'Sdílejte své hluboké myšlenky…', inputHint: 'Enter pro odeslání · Shift+Enter pro nový řádek', skipAd: 'Pokračovat →', adLabel: 'R E K L A M A', welcome: 'Vítejte. Co máte dnes na srdci?', exportMe: 'Já', footerText: '© 2026 Philosophia · Dialogy s velkými mysliteli', privacy: 'Soukromí', terms: 'Podmínky', about: 'O nás', contact: 'Kontakt' }
 };
 
 const PHILS_DATA = [
   {
     id:'socrates', emoji:'🏛️', conceptIcon:'⚖️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Socrates_Louvre.jpg/330px-Socrates_Louvre.jpg',
-    name:{ ko:'소크라테스', en:'Socrates' },
+    name:{ ko:'소크라테스', en:'Socrates', ja:'ソクラテス', 'zh-CN':'苏格拉底', 'zh-TW':'蘇格拉底', es:'Sócrates', fr:'Socrate', de:'Sokrates', it:'Socrate', pt:'Sócrates', ru:'Сократ', ar:'سقراط', hi:'सुकरात', tr:'Sokrates', pl:'Sokrates', nl:'Socrates', sv:'Sokrates', th:'โซเครตีส', vi:'Socrates', id:'Socrates', cs:'Sókratés' },
     era:{ ko:'BC 470 – BC 399', en:'470 BC – 399 BC' },
     region:{ ko:'아테네', en:'Athens' },
     quote:{ ko:'"너 자신을 알라."', en:'"Know thyself."' },
@@ -77,7 +48,7 @@ const PHILS_DATA = [
   },
   {
     id:'plato', emoji:'🌌', conceptIcon:'📐', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Plato_Pio-Clementino_Inv305.jpg/330px-Plato_Pio-Clementino_Inv305.jpg',
-    name:{ ko:'플라톤', en:'Plato' },
+    name:{ ko:'플라톤', en:'Plato', ja:'プラトン', 'zh-CN':'柏拉图', 'zh-TW':'柏拉圖', es:'Platón', fr:'Platon', de:'Platon', it:'Platone', pt:'Platão', ru:'Платон', ar:'أفلاطون', hi:'अफ़लातून', tr:'Platon', pl:'Platon', nl:'Plato', sv:'Platon', th:'เพลโต', vi:'Platon', id:'Plato', cs:'Platón' },
     era:{ ko:'BC 427 – BC 347', en:'427 BC – 347 BC' },
     region:{ ko:'아테네', en:'Athens' },
     quote:{ ko:'"동굴 밖의 참된 빛을 보라."', en:'"Behold the true light outside the cave."' },
@@ -97,7 +68,7 @@ const PHILS_DATA = [
   },
   {
     id:'aristotle', emoji:'🌿', conceptIcon:'🔬', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/330px-Aristotle_Altemps_Inv8575.jpg',
-    name:{ ko:'아리스토텔레스', en:'Aristotle' },
+    name:{ ko:'아리스토텔레스', en:'Aristotle', ja:'アリストテレス', 'zh-CN':'亚里士多德', 'zh-TW':'亞里斯多德', es:'Aristóteles', fr:'Aristote', de:'Aristoteles', it:'Aristotele', pt:'Aristóteles', ru:'Аристотель', ar:'أرسطو', hi:'अरस्तू', tr:'Aristoteles', pl:'Arystoteles', nl:'Aristoteles', sv:'Aristoteles', th:'อริสโตเติล', vi:'Aristoteles', id:'Aristoteles', cs:'Aristotelés' },
     era:{ ko:'BC 384 – BC 322', en:'384 BC – 322 BC' },
     region:{ ko:'스타게이라', en:'Stagira' },
     quote:{ ko:'"행복은 활동 속에 있다."', en:'"Happiness depends upon ourselves."' },
@@ -117,7 +88,7 @@ const PHILS_DATA = [
   },
   {
     id:'confucius', emoji:'📜', conceptIcon:'🎎', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Confucius_Tang_Dynasty.jpg/330px-Confucius_Tang_Dynasty.jpg',
-    name:{ ko:'공자', en:'Confucius' },
+    name:{ ko:'공자', en:'Confucius', ja:'孔子', 'zh-CN':'孔子', 'zh-TW':'孔子', es:'Confucio', fr:'Confucius', de:'Konfuzius', it:'Confucio', pt:'Confúcio', ru:'Конфуций', ar:'كونفوشيوس', hi:'कन्फ्यूशियस', tr:'Konfüçyüs', pl:'Konfucjusz', nl:'Confucius', sv:'Konfucius', th:'ขงจื๊อ', vi:'Khổng Tử', id:'Konfusius', cs:'Konfucius' },
     era:{ ko:'BC 551 – BC 479', en:'551 BC – 479 BC' },
     region:{ ko:'노나라', en:'Lu State' },
     quote:{ ko:'"배우고 때때로 익히면 또한 기쁘지 아니한가."', en:'"Is it not pleasant to learn?"' },
@@ -137,7 +108,7 @@ const PHILS_DATA = [
   },
   {
     id:'laozi', emoji:'☯️', conceptIcon:'🌊', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Laozi_-_Project_Gutenberg_eText_15250.jpg/330px-Laozi_-_Project_Gutenberg_eText_15250.jpg',
-    name:{ ko:'노자', en:'Laozi' },
+    name:{ ko:'노자', en:'Laozi', ja:'老子', 'zh-CN':'老子', 'zh-TW':'老子', es:'Lao-Tse', fr:'Lao Tseu', de:'Laotse', it:'Laozi', pt:'Lao Tsé', ru:'Лао-цзы', ar:'لاوتزه', hi:'लाओत्से', tr:'Laozi', pl:'Laozi', nl:'Laozi', sv:'Lao Zi', th:'เล่าจื๊อ', vi:'Lão Tử', id:'Laozi', cs:'Lao-c\'' },
     era:{ ko:'BC 6세기 추정', en:'6th Century BC' },
     region:{ ko:'초나라', en:'Chu State' },
     quote:{ ko:'"말할 수 있는 도는 영원한 도가 아니다."', en:'"The Tao that can be told is not the eternal Tao."' },
@@ -157,7 +128,7 @@ const PHILS_DATA = [
   },
   {
     id:'buddha', emoji:'🪷', conceptIcon:'🕉️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Gandhara_Buddha_%28tnm%29.jpeg/330px-Gandhara_Buddha_%28tnm%29.jpeg',
-    name:{ ko:'고타마 붓다', en:'Gautama Buddha' },
+    name:{ ko:'고타마 붓다', en:'Gautama Buddha', ja:'釈迦', 'zh-CN':'释迦牟尼', 'zh-TW':'釋迦牟尼', es:'Gautama Buda', fr:'Siddhartha Gautama', de:'Siddhartha Gautama', it:'Gautama Buddha', pt:'Gautama Buddha', ru:'Гауตาма Будда', ar:'غوتاما بوذا', hi:'गौतम बुद्ध', tr:'Gautama Buddha', pl:'Budda Siakjamuni', nl:'Gautama Boeddha', sv:'Gautama Buddha', th:'พระโคตมพุทธเจ้า', vi:'Thích-ca Mâu-ni', id:'Gautama Buddha', cs:'Gautama Buddha' },
     era:{ ko:'BC 563 – BC 483', en:'563 BC – 483 BC' },
     region:{ ko:'인도', en:'India' },
     quote:{ ko:'"모든 것은 변한다. 집착에서 고통이 생긴다."', en:'"All things change, nothing is permanent."' },
@@ -177,7 +148,7 @@ const PHILS_DATA = [
   },
   {
     id:'aquinas', emoji:'⛪', conceptIcon:'🕊️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/St-thomas-aquinas.jpg/330px-St-thomas-aquinas.jpg',
-    name:{ ko:'토마스 아퀴나스', en:'Thomas Aquinas' },
+    name:{ ko:'토마스 아퀴나스', en:'Thomas Aquinas', ja:'トマス・アクィナス', 'zh-CN':'托马斯·阿奎那', 'zh-TW':'托馬斯·阿奎那', es:'Tomás de Aquino', fr:'Thomas d\'Aquin', de:'Thomas von Aquin', it:'Tommaso d\'Aquino', pt:'Tomás de Aquino', ru:'Фома Аквинский', ar:'توما الأكويني', hi:'थॉमस एक्विनास', tr:'Thomas Aquinas', pl:'Tomasz z Akwinu', nl:'Thomas van Aquino', sv:'Thomas av Aquino', th:'โทมัส อะไควนัส', vi:'Tôma Aquinô', id:'Thomas Aquinas', cs:'Tomáš Akvinský' },
     era:{ ko:'1225 – 1274', en:'1225 – 1274' },
     region:{ ko:'이탈리아', en:'Italy' },
     quote:{ ko:'"은혜는 자연을 완성한다."', en:'"Grace perfects nature."' },
@@ -197,7 +168,7 @@ const PHILS_DATA = [
   },
   {
     id:'descartes', emoji:'🧠', conceptIcon:'📐', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg/330px-Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg',
-    name:{ ko:'데카르트', en:'Descartes' },
+    name:{ ko:'데카르트', en:'Descartes', ja:'デカルト', 'zh-CN':'笛卡尔', 'zh-TW':'笛卡兒', es:'Descartes', fr:'Descartes', de:'Descartes', it:'Cartesio', pt:'Descartes', ru:'Декарт', ar:'ديكارت', hi:'डेसकार्टेस', tr:'Descartes', pl:'Kartezjusz', nl:'Descartes', sv:'Descartes', th:'เดส์การ์ตส์', vi:'Descartes', id:'Descartes', cs:'Descartes' },
     era:{ ko:'1596 – 1650', en:'1596 – 1650' },
     region:{ ko:'프랑스', en:'France' },
     quote:{ ko:'"나는 생각한다, 고로 나는 존재한다."', en:'"I think, therefore I am."' },
@@ -217,7 +188,7 @@ const PHILS_DATA = [
   },
   {
     id:'hume', emoji:'🌊', conceptIcon:'👁️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/David_Hume.jpg/330px-David_Hume.jpg',
-    name:{ ko:'데이비드 흄', en:'David Hume' },
+    name:{ ko:'데이비드 흄', en:'David Hume', ja:'デイヴィッド・ヒューム', 'zh-CN':'大卫·休谟', 'zh-TW':'大衛·休謨', es:'David Hume', fr:'David Hume', de:'David Hume', it:'David Hume', pt:'David Hume', ru:'Дэвид Юм', ar:'ديفيد هيوم', hi:'डेविड ह्यूम', tr:'David Hume', pl:'David Hume', nl:'David Hume', sv:'David Hume', th:'เดวิด ฮูม', vi:'David Hume', id:'David Hume', cs:'David Hume' },
     era:{ ko:'1711 – 1776', en:'1711 – 1776' },
     region:{ ko:'스코틀랜드', en:'Scotland' },
     quote:{ ko:'"이성은 열정의 노예이다."', en:'"Reason is the slave of passions."' },
@@ -237,7 +208,7 @@ const PHILS_DATA = [
   },
   {
     id:'kant', emoji:'⚖️', conceptIcon:'☀️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Immanuel_Kant_3.jpg/330px-Immanuel_Kant_3.jpg',
-    name:{ ko:'칸트', en:'Kant' },
+    name:{ ko:'칸트', en:'Kant', ja:'カント', 'zh-CN':'康德', 'zh-TW':'康德', es:'Kant', fr:'Kant', de:'Kant', it:'Kant', pt:'Kant', ru:'Кант', ar:'كانت', hi:'कांट', tr:'Kant', pl:'Kant', nl:'Kant', sv:'Kant', th:'คานต์', vi:'Kant', id:'Kant', cs:'Kant' },
     era:{ ko:'1724 – 1804', en:'1724 – 1804' },
     region:{ ko:'독일', en:'Germany' },
     quote:{ ko:'"내 마음속의 도덕 법칙."', en:'"The moral law within me."' },
@@ -257,7 +228,7 @@ const PHILS_DATA = [
   },
   {
     id:'hegel', emoji:'🌀', conceptIcon:'🏛️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Hegel_by_Schlesinger_1831.jpg/330px-Hegel_by_Schlesinger_1831.jpg',
-    name:{ ko:'헤겔', en:'Hegel' },
+    name:{ ko:'헤겔', en:'Hegel', ja:'ヘーゲル', 'zh-CN':'黑格尔', 'zh-TW':'黑格爾', es:'Hegel', fr:'Hegel', de:'Hegel', it:'Hegel', pt:'Hegel', ru:'Гегель', ar:'هيغل', hi:'हेगेल', tr:'Hegel', pl:'Hegel', nl:'Hegel', sv:'Hegel', th:'เฮเกิล', vi:'Hegel', id:'Hegel', cs:'Hegel' },
     era:{ ko:'1770 – 1831', en:'1770 – 1831' },
     region:{ ko:'독일', en:'Germany' },
     quote:{ ko:'"이성적인 것은 현실적이다."', en:'"The rational is real."' },
@@ -277,7 +248,7 @@ const PHILS_DATA = [
   },
   {
     id:'schopenhauer', emoji:'🎭', conceptIcon:'🕯️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Arthur_Schopenhauer_by_J_Sch%C3%A4fer%2C_1859b.jpg/330px-Arthur_Schopenhauer_by_J_Sch%C3%A4fer%2C_1859b.jpg',
-    name:{ ko:'쇼펜하우어', en:'Schopenhauer' },
+    name:{ ko:'쇼펜하우어', en:'Schopenhauer', ja:'ショーペンハウアー', 'zh-CN':'叔本华', 'zh-TW':'叔本華', es:'Schopenhauer', fr:'Schopenhauer', de:'Schopenhauer', it:'Schopenhauer', pt:'Schopenhauer', ru:'Шопенгауэр', ar:'شوپنهاور', hi:'शोपेनहावर', tr:'Schopenhauer', pl:'Schopenhauer', nl:'Schopenhauer', sv:'Schopenhauer', th:'โชเพนเฮาเออร์', vi:'Schopenhauer', id:'Schopenhauer', cs:'Schopenhauer' },
     era:{ ko:'1788 – 1860', en:'1788 – 1860' },
     region:{ ko:'독일', en:'Germany' },
     quote:{ ko:'"삶은 고통이다."', en:'"Life is suffering."' },
@@ -297,7 +268,7 @@ const PHILS_DATA = [
   },
   {
     id:'nietzsche', emoji:'⚡', conceptIcon:'🧗', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Nietzsche187a.jpg/330px-Nietzsche187a.jpg',
-    name:{ ko:'니체', en:'Nietzsche' },
+    name:{ ko:'니체', en:'Nietzsche', ja:'ニーチェ', 'zh-CN':'尼采', 'zh-TW':'尼采', es:'Nietzsche', fr:'Nietzsche', de:'Nietzsche', it:'Nietzsche', pt:'Nietzsche', ru:'Ницше', ar:'نيتشه', hi:'नीत्शे', tr:'Nietzsche', pl:'Nietzsche', nl:'Nietzsche', sv:'Nietzsche', th:'นีทเชอ', vi:'Nietzsche', id:'Nietzsche', cs:'Nietzsche' },
     era:{ ko:'1844 – 1900', en:'1844 – 1900' },
     region:{ ko:'독일', en:'Germany' },
     quote:{ ko:'"신은 죽었다."', en:'"God is dead."' },
@@ -317,7 +288,7 @@ const PHILS_DATA = [
   },
   {
     id:'heidegger', emoji:'🌲', conceptIcon:'🛖', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Martin_Heidegger_1960.jpg/330px-Martin_Heidegger_1960.jpg',
-    name:{ ko:'하이데거', en:'Heidegger' },
+    name:{ ko:'하이데거', en:'Heidegger', ja:'ハイデッガー', 'zh-CN':'海德格尔', 'zh-TW':'海德格爾', es:'Heidegger', fr:'Heidegger', de:'Heidegger', it:'Heidegger', pt:'Heidegger', ru:'Хайдеггер', ar:'هايدغر', hi:'ไฮเดกเกอร์', tr:'Heidegger', pl:'Heidegger', nl:'Heidegger', sv:'Heidegger', th:'ไฮเดกเกอร์', vi:'Heidegger', id:'Heidegger', cs:'Heidegger' },
     era:{ ko:'1889 – 1976', en:'1889 – 1976' },
     region:{ ko:'독일', en:'Germany' },
     quote:{ ko:'"현존재는 죽음을 향한 존재이다."', en:'"Being-towards-death."' },
@@ -337,7 +308,7 @@ const PHILS_DATA = [
   },
   {
     id:'marx', emoji:'✊', conceptIcon:'🛠️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/330px-Karl_Marx_001.jpg',
-    name:{ ko:'칼 마르크스', en:'Karl Marx' },
+    name:{ ko:'칼 마르크스', en:'Karl Marx', ja:'カール・マルクス', 'zh-CN':'卡尔·马克思', 'zh-TW':'卡爾·馬克思', es:'Karl Marx', fr:'Karl Marx', de:'Karl Marx', it:'Karl Marx', pt:'Karl Marx', ru:'Карл Маркс', ar:'كارل ماركس', hi:'कार्ल मार्क्स', tr:'Karl Marx', pl:'Karol Marks', nl:'Karl Marx', sv:'Karl Marx', th:'คาร์ล มาร์กซ์', vi:'Karl Marx', id:'Karl Marx', cs:'Karl Marx' },
     era:{ ko:'1818 – 1883', en:'1818 – 1883' },
     region:{ ko:'독일', en:'Germany' },
     quote:{ ko:'"세상을 변혁하는 것이 중요하다."', en:'"Philosophers have only interpreted the world; the point is to change it."' },
@@ -357,7 +328,7 @@ const PHILS_DATA = [
   },
   {
     id:'sartre', emoji:'🚬', conceptIcon:'⛓️', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sartre_1967_crop.jpg/330px-Sartre_1967_crop.jpg',
-    name:{ ko:'사르트르', en:'Sartre' },
+    name:{ ko:'사르트르', en:'Sartre', ja:'サルトル', 'zh-CN':'萨特', 'zh-TW':'薩特', es:'Sartre', fr:'Sartre', de:'Sartre', it:'Sartre', pt:'Sartre', ru:'Сартр', ar:'سارتر', hi:'सार्त्र', tr:'Sartre', pl:'Sartre', nl:'Sartre', sv:'Sartre', th:'ซาทร์', vi:'Sartre', id:'Sartre', cs:'Sartre' },
     era:{ ko:'1905 – 1980', en:'1905 – 1980' },
     region:{ ko:'프랑스', en:'France' },
     quote:{ ko:'"실존은 본질에 앞선다."', en:'"Existence precedes essence."' },
@@ -377,7 +348,7 @@ const PHILS_DATA = [
   },
   {
     id:'wittgenstein', emoji:'🔷', conceptIcon:'🧩', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Ludwig_Wittgenstein.jpg/330px-Ludwig_Wittgenstein.jpg',
-    name:{ ko:'비트겐슈타인', en:'Wittgenstein' },
+    name:{ ko:'비트겐슈타인', en:'Wittgenstein', ja:'ウィトゲンシュタイン', 'zh-CN':'维特根斯坦', 'zh-TW':'維特根斯坦', es:'Wittgenstein', fr:'Wittgenstein', de:'Wittgenstein', it:'Wittgenstein', pt:'Wittgenstein', ru:'Витгенштейн', ar:'فيتجنشتاين', hi:'विट्गेन्स्टाइन', tr:'Wittgenstein', pl:'Wittgenstein', nl:'Wittgenstein', sv:'Wittgenstein', th:'วิตเกนสไตน์', vi:'Wittgenstein', id:'Wittgenstein', cs:'Wittgenstein' },
     era:{ ko:'1889 – 1951', en:'1889 – 1951' },
     region:{ ko:'오스트리아', en:'Austria' },
     quote:{ ko:'"말할 수 없는 것은 침묵해야 한다."', en:'"Whereof one cannot speak, thereof one must be silent."' },
@@ -397,7 +368,7 @@ const PHILS_DATA = [
   },
   {
     id:'popper', emoji:'🔭', conceptIcon:'📉', portrait:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Karl_Popper.jpg/330px-Karl_Popper.jpg',
-    name:{ ko:'칼 포퍼', en:'Popper' },
+    name:{ ko:'칼 포퍼', en:'Popper', ja:'ポパー', 'zh-CN':'波普尔', 'zh-TW':'波普爾', es:'Popper', fr:'Popper', de:'Popper', it:'Popper', pt:'Popper', ru:'Поппер', ar:'بوبر', hi:'पॉपर', tr:'Popper', pl:'Popper', nl:'Popper', sv:'Popper', th:'ป็อปเปอร์', vi:'Popper', id:'Popper', cs:'Popper' },
     era:{ ko:'1902 – 1994', en:'1902 – 1994' },
     region:{ ko:'오스트리아', en:'Austria' },
     quote:{ ko:'"과학은 반증 가능성이다."', en:'"Falsifiability is the criterion of science."' },
@@ -449,11 +420,20 @@ function setLanguage(lang) {
   if (isScreenActive('screen-detail')) buildDetail(currentPhil);
   if (isScreenActive('screen-chat')) {
     document.getElementById('chatTopicPill').textContent = currentTopic || t('freeChat');
-    document.getElementById('chatName').textContent = currentPhil.name[currentLang];
+    document.getElementById('chatName').textContent = getL(currentPhil.name);
   }
 }
 
-function t(key) { return I18N[currentLang]?.[key] || I18N['en'][key] || key; }
+function t(key) { 
+  const val = I18N[currentLang]?.[key] || I18N['en'][key];
+  return val || key;
+}
+
+function getL(obj) {
+  if (!obj) return '';
+  if (typeof obj === 'string') return obj;
+  return obj[currentLang] || obj['en'] || Object.values(obj)[0] || '';
+}
 
 function updateUI() {
   document.documentElement.lang = currentLang;
@@ -464,6 +444,9 @@ function updateUI() {
   const input = document.getElementById('chatInput');
   if (input) input.placeholder = t('inputPlaceholder');
   document.getElementById('langSelect').value = currentLang;
+  
+  // RTL support for Arabic
+  document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 }
 
 function buildGallery() {
@@ -479,11 +462,11 @@ function buildGallery() {
     card.innerHTML = `
       <div class="phil-card-body">
         <div style="display:flex; justify-content:space-between; align-items:center;">
-          <div class="phil-card-era">${p.era[currentLang]}</div>
+          <div class="phil-card-era">${getL(p.era)}</div>
           <div style="font-size:1.8rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));">${p.conceptIcon}</div>
         </div>
-        <div class="phil-card-name">${p.name[currentLang]}</div>
-        <div style="font-size: 0.8rem; color: var(--gold2); font-style: italic; margin-top: 0.5rem; line-height: 1.4; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">${p.quote[currentLang]}</div>
+        <div class="phil-card-name">${getL(p.name)}</div>
+        <div style="font-size: 0.8rem; color: var(--gold2); font-style: italic; margin-top: 0.5rem; line-height: 1.4; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">${getL(p.quote)}</div>
       </div>
     `;
     card.onclick = () => pickPhilosopher(p);
@@ -498,35 +481,36 @@ function pickPhilosopher(p) {
 }
 
 function buildDetail(p) {
-  const name = p.name[currentLang];
+  const name = getL(p.name);
   
   // Randomly pick 4 topics
-  const allTopics = [...p.topics[currentLang]];
-  const shuffled = allTopics.sort(() => 0.5 - Math.random());
+  const topicsObj = p.topics;
+  const allTopics = getL(topicsObj) || [];
+  const shuffled = [...allTopics].sort(() => 0.5 - Math.random());
   const selectedTopics = shuffled.slice(0, 4);
 
   document.getElementById('detailHero').innerHTML = `
     <div style="text-align: center; padding: 3rem 1rem;">
       <div style="font-size: 4rem; margin-bottom: 1rem">${p.emoji}</div>
       <h2 class="site-title" style="font-size: 3.5rem">${name}</h2>
-      <p style="color: var(--gold2); font-family: 'Cinzel'; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 1rem;">${p.era[currentLang]} · ${p.region[currentLang]}</p>
+      <p style="color: var(--gold2); font-family: 'Cinzel'; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 1rem;">${getL(p.era)} · ${getL(p.region)}</p>
       
       <div style="display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 3rem;">
-        ${p.tags[currentLang].map(tg => `<span style="font-size: 0.75rem; border: 1px solid var(--border); padding: 0.3rem 0.8rem; color: var(--gold); border-radius: 20px; background: rgba(212,168,67,0.05);">#${tg}</span>`).join('')}
+        ${getL(p.tags).map(tg => `<span style="font-size: 0.75rem; border: 1px solid var(--border); padding: 0.3rem 0.8rem; color: var(--gold); border-radius: 20px; background: rgba(212,168,67,0.05);">#${tg}</span>`).join('')}
       </div>
 
       <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; text-align: left;">
         <div class="info-box">
           <h3 style="font-family: 'Cinzel'; color: var(--gold); margin-bottom: 1rem; font-size: 1rem;">${t('thoughtsLabel')}</h3>
-          <p style="line-height: 1.8; color: var(--cream2); font-size: 1rem;">${p.desc[currentLang]}</p>
+          <p style="line-height: 1.8; color: var(--cream2); font-size: 1rem;">${getL(p.desc)}</p>
         </div>
         <div class="info-box">
           <h3 style="font-family: 'Cinzel'; color: var(--gold); margin-bottom: 1rem; font-size: 1rem;">${t('historyLabel')}</h3>
-          <p style="line-height: 1.8; color: var(--cream2); font-size: 1rem;">${p.history[currentLang]}</p>
+          <p style="line-height: 1.8; color: var(--cream2); font-size: 1rem;">${getL(p.history)}</p>
         </div>
         <div class="info-box" style="grid-column: 1 / -1;">
           <h3 style="font-family: 'Cinzel'; color: var(--gold); margin-bottom: 1rem; font-size: 1rem;">${t('featuresLabel')}</h3>
-          <p style="line-height: 1.8; color: var(--cream2); font-size: 1rem;">${p.features[currentLang]}</p>
+          <p style="line-height: 1.8; color: var(--cream2); font-size: 1rem;">${getL(p.features)}</p>
         </div>
       </div>
     </div>
@@ -575,7 +559,7 @@ function startChat(topic) {
   currentTopic = topic;
   chatHistory = [];
   document.getElementById('chatAvatar').textContent = currentPhil.emoji;
-  document.getElementById('chatName').textContent = currentPhil.name[currentLang];
+  document.getElementById('chatName').textContent = getL(currentPhil.name);
   document.getElementById('chatTopicPill').textContent = topic || t('freeChat');
   document.getElementById('chatMessages').innerHTML = '';
   
@@ -587,7 +571,7 @@ function startChat(topic) {
     sendMessage(topic);
   } else {
     // 자유 대화 선택 시: 고유 인사말 출력
-    const msg = currentPhil.welcome[currentLang] || t('welcome');
+    const msg = getL(currentPhil.welcome) || t('welcome');
     appendMsg('phil', msg);
   }
   
@@ -598,7 +582,7 @@ function appendMsg(role, text) {
   const msgs = document.getElementById('chatMessages');
   const div = document.createElement('div');
   div.className = `msg ${role}`;
-  const name = role === 'phil' ? currentPhil.name[currentLang] : t('exportMe');
+  const name = role === 'phil' ? getL(currentPhil.name) : t('exportMe');
   div.innerHTML = `
     <div class="msg-bubble-wrap">
       <div class="msg-name">${name}</div>
@@ -661,8 +645,9 @@ function switchPhil() { showScreen('screen-gallery'); }
 
 function saveChatLog() {
   if (chatHistory.length === 0) return;
-  const philName = currentPhil.name[currentLang];
-  let logText = `--- ${philName}와의 대화 ---\n주제: ${currentTopic || t('freeChat')}\n\n`;
+  const philName = getL(currentPhil.name);
+  const topicLabel = t('changeTopic');
+  let logText = `--- ${philName} ---\n${topicLabel}: ${currentTopic || t('freeChat')}\n\n`;
   chatHistory.forEach(m => {
     const label = m.role === 'assistant' ? philName : t('exportMe');
     logText += `${label} : ${m.content}\n`;
@@ -672,7 +657,7 @@ function saveChatLog() {
   const blob = new Blob([logText], { type: 'text/plain' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `대화_${currentPhil.id}.txt`;
+  a.download = `${philName}_chat.txt`;
   a.click();
 }
 
@@ -689,8 +674,8 @@ async function callAPI(msg) {
   // Simulate AI Response based on persona
   return new Promise(resolve => {
     setTimeout(() => {
-      const name = currentPhil.name[currentLang];
-      const quote = currentPhil.quote[currentLang];
+      const name = getL(currentPhil.name);
+      const quote = getL(currentPhil.quote);
       const id = currentPhil.id;
       
       let response = '';
@@ -725,7 +710,6 @@ async function callAPI(msg) {
         const list = reactions[id] || reactions.default;
         const randomLead = list[Math.floor(Math.random() * list.length)];
         
-        // 인물별 고유 말투 적용
         if (id === 'socrates') {
           response = `${randomLead}\n\n나는 그저 내가 모른다는 사실만을 알 뿐이라네. 그대는 "${msg}"에 대해 스스로 어떤 답을 내렸는가? 우리 함께 문답을 통해 진리에 다가가 보세.`;
         } else if (id === 'nietzsche') {
@@ -735,12 +719,14 @@ async function callAPI(msg) {
         } else if (id === 'laozi') {
           response = `${randomLead}\n\n말할 수 있는 도는 영원한 도가 아니라고 했거늘, 억지로 규정하려 하지 마시오. 흐르는 물처럼 그저 느껴보는 것이 어떻겠소?`;
         } else {
-          // 공통 몰입형 답변 (설명 제거)
           response = `${randomLead}\n\n${quote} 이 말 속에 내가 하고 싶은 답이 담겨 있소. 우리 이 지점에서부터 더 깊은 대화를 이어가 보지 않겠소? 그대의 사유를 들려주시오.`;
         }
-      } else {
-        // English version (simplified immersion)
+      } else if (currentLang === 'en') {
         response = `"${msg}"... This touches the very core of my thought. As we discuss this, remember: ${quote}. What is your own perspective on this journey we are taking together?`;
+      } else {
+        // Generic response for other languages
+        const siteTitle = t('siteTitle');
+        response = `[${name} / ${siteTitle}]\n"${msg}"\n\n${quote}\n\n(This response is currently simulated in ${currentLang}. Full multilingual AI capabilities are being integrated.)`;
       }
       resolve(response);
     }, 1500); 
